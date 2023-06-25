@@ -1,2 +1,3 @@
 # image-based-3d-reconstruction
-Tools and algorithms for creating accurate 3D models from images using photogrammetry techniques.
+
+This repository contains the code and related assets for a project aimed at developing and evaluating a novel algorithm for autonomous determination of optimal camera poses for effective 3D object reconstruction. The project leverages Unity 3D for environment simulation and integration with robotic systems.
