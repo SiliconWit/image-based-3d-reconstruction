@@ -13,24 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Methodology/Factors for Preliminary Capture Experiments.md",
+                "file": "Experiments/Spiral vs Circular - 1.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "c1c85efc634af038",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
               }
             }
           }
@@ -100,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Methodology/Factors for Preliminary Capture Experiments.md",
+                "file": "Experiments/Spiral vs Circular - 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Methodology/Factors for Preliminary Capture Experiments.md",
+                "file": "Experiments/Spiral vs Circular - 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Methodology/Factors for Preliminary Capture Experiments.md"
+                "file": "Experiments/Spiral vs Circular - 1.md"
               }
             }
           }
@@ -163,17 +148,26 @@
   },
   "active": "4f1f78f1ed29a29c",
   "lastOpenFiles": [
-    "Methodology/3D Models for Reconstruction.md",
+    "Untitled.md",
+    "Experiments/Spiral vs Circular - 1.md",
+    "Untitled.canvas",
+    "Pasted image 20230726231607.png",
+    "Background/Background Overview.md",
+    "Experiments",
+    "2023-07-26.md",
     "Methodology/Factors for Preliminary Capture Experiments.md",
+    "Background",
     "Methodology/Missed Out Literature on Photogrammetry Parameters.md",
+    "Methodology/3D Models for Reconstruction.md",
     "Methodology/Camera Lenses vs Sensor Size.md",
-    "Pasted image 20230725004429.png",
     "Methodology/Setting up Camera Distortion.md",
+    "Methodology/Questions to (probably)Answer.md",
+    "Methodology/Untitled.canvas",
+    "Pasted image 20230725004429.png",
     "Pasted image 20230724230729.png",
     "Pasted image 20230724230036.png.md",
     "Pasted image 20230724230036.png",
     "Pasted image 20230724230027.png",
-    "Untitled.canvas",
     "Methodology",
     "2023-07-24.md"
   ]

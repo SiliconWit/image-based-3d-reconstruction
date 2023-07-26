@@ -1,0 +1,3 @@
+#3D-Reconstruction #photogrammetry #automation #Virtual-Environments #unity #camera-poses #Evaluation-metrics
+
+**3D reconstruction** pertains to the process of capturing the shape and appearance of real objects and using this data to create three-dimensional digital models. As we immerse deeper into the digital era, the importance and applications of 3D models have grown exponentially, finding their niche in numerous sectors such as entertainment, heritage preservation, medical imaging, and augmented reality, among others.
