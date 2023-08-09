@@ -4,22 +4,50 @@
     "type": "split",
     "children": [
       {
-        "id": "7a7c5483fd5cea2d",
+        "id": "c468565479f10f1d",
         "type": "tabs",
         "children": [
           {
-            "id": "4f1f78f1ed29a29c",
+            "id": "b35f5a865361e02f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experiments/Spiral vs Circular - 1.md",
+                "file": "Background/Photogrammetry Concepts.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "0c91220d810a95e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Background/Photogrammetry Concepts.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "881c2b3cf2da753d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Questions.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Experiments/Spiral vs Circular - 1.md",
+                "file": "Questions.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Experiments/Spiral vs Circular - 1.md",
+                "file": "Questions.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Experiments/Spiral vs Circular - 1.md"
+                "file": "Questions.canvas"
               }
             }
           }
@@ -146,29 +174,51 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4f1f78f1ed29a29c",
+  "active": "881c2b3cf2da753d",
   "lastOpenFiles": [
+    "Solutions and Ideas/Using Voxels.md",
+    "Questions.canvas",
+    "Papers/lartigueVoxelbasedPathPlanning2014.md",
+    "Solutions and Ideas",
+    "Papers/lartigueVoxelbasedPathPlanning2014a.md",
+    "Media/Papers/lartigueVoxelbasedPathPlanning2014/image-4-x53-y293.png",
+    "Background/Photogrammetry Concepts.md",
+    "Media/Papers/lartigueVoxelbasedPathPlanning2014",
+    "Media/Papers",
+    "Methodology/Colmap.md",
+    "Background/Glossary.md",
+    "Papers/schonbergerStructurefromMotionRevisited2016.md",
     "Untitled.md",
-    "Experiments/Spiral vs Circular - 1.md",
-    "Untitled.canvas",
-    "Pasted image 20230726231607.png",
+    "lartigueVoxelbasedPathPlanning2014a.md",
+    "Templates/Zotero Template DH.md",
+    "{{annotation.imageRelativePath}}.md",
+    "Templates/Zotero Template.md",
+    "pichatSurveyMethods3D2018.md",
+    "Untitled 1.canvas",
+    "Sprial.md",
+    "Methodology/Factors for Preliminary Capture Experiments.md",
+    "2023-07-28.md",
+    "Papers",
+    "lartigueVoxelbasedPathPlanning2014.md",
+    "Zotero Template DH.md",
+    "Zotero Template.md",
+    "Templates",
+    "Problem Statement & Objectives/Some Problems.md",
+    "Media",
+    "Problem Statement & Objectives/Objectives.md",
     "Background/Background Overview.md",
+    "Problem Statement & Objectives",
+    "Experiments/Spiral vs Circular - 2.md",
+    "Experiments/Spiral vs Circular - 1.md",
+    "Pasted image 20230726231607.png",
     "Experiments",
     "2023-07-26.md",
-    "Methodology/Factors for Preliminary Capture Experiments.md",
     "Background",
-    "Methodology/Missed Out Literature on Photogrammetry Parameters.md",
-    "Methodology/3D Models for Reconstruction.md",
-    "Methodology/Camera Lenses vs Sensor Size.md",
-    "Methodology/Setting up Camera Distortion.md",
-    "Methodology/Questions to (probably)Answer.md",
     "Methodology/Untitled.canvas",
     "Pasted image 20230725004429.png",
     "Pasted image 20230724230729.png",
-    "Pasted image 20230724230036.png.md",
     "Pasted image 20230724230036.png",
     "Pasted image 20230724230027.png",
-    "Methodology",
-    "2023-07-24.md"
+    "Methodology"
   ]
 }

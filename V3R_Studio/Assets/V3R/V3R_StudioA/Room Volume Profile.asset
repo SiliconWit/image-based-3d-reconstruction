@@ -15,13 +15,13 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 2
   rayTracing:
     m_OverrideState: 1
     m_Value: 1
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1.94
   directLightingStrength:
     m_OverrideState: 0
     m_Value: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Value: 1
   m_StepCount:
     m_OverrideState: 0
-    m_Value: 4
+    m_Value: 6
   m_FullResolution:
     m_OverrideState: 0
     m_Value: 0
@@ -68,19 +68,19 @@ MonoBehaviour:
     m_Value: 0
   m_DirectionCount:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 2
   m_RayLength:
     m_OverrideState: 0
-    m_Value: 3
+    m_Value: 20
   m_SampleCount:
     m_OverrideState: 0
-    m_Value: 2
+    m_Value: 8
   m_Denoise:
     m_OverrideState: 0
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0.65
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   quality:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
   enabled:
     m_OverrideState: 1
@@ -124,10 +124,10 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 4
   m_MinSmoothness:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   m_SmoothnessFadeStart:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   reflectSky:
     m_OverrideState: 0
@@ -186,25 +186,25 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_RayLength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 50
   m_ClampValue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1.2
   m_Denoise:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   m_DenoiserRadius:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 16
   m_AffectSmoothSurfaces:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   mode:
     m_OverrideState: 0
     m_Value: 2
   m_FullResolution:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   sampleCount:
     m_OverrideState: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_RayMaxIterationsRT:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 64
 --- !u!114 &1105410974485182035
 MonoBehaviour:
@@ -269,8 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   quality:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 2
   enable:
     m_OverrideState: 1
     m_Value: 1
@@ -287,19 +287,19 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_MaxRaySteps:
-    m_OverrideState: 0
-    m_Value: 64
+    m_OverrideState: 1
+    m_Value: 128
   m_DenoiseSS:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   m_HalfResolutionDenoiserSS:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   m_DenoiserRadiusSS:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.5
   m_SecondDenoiserPassSS:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   lastBounceFallbackHierarchy:
     m_OverrideState: 0
@@ -316,17 +316,17 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 7
   m_RayLength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 50
   m_ClampValue:
-    m_OverrideState: 0
-    m_Value: 0.8
+    m_OverrideState: 1
+    m_Value: 1.5
   mode:
     m_OverrideState: 0
     m_Value: 2
   m_FullResolution:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   sampleCount:
     m_OverrideState: 0
     m_Value: 2
@@ -334,20 +334,20 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_Denoise:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   m_HalfResolutionDenoiser:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   m_DenoiserRadius:
-    m_OverrideState: 0
-    m_Value: 0.66
+    m_OverrideState: 1
+    m_Value: 1
   m_SecondDenoiserPass:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   m_MaxMixedRaySteps:
-    m_OverrideState: 0
-    m_Value: 48
+    m_OverrideState: 1
+    m_Value: 64
   receiverMotionRejection:
     m_OverrideState: 0
     m_Value: 1

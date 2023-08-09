@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6ce85395394a9ae43b5b606c6676ff50,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ce85395394a9ae43b5b606c6676ff50,
         type: 3}
@@ -145,12 +145,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6ce85395394a9ae43b5b606c6676ff50,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53113985
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ce85395394a9ae43b5b606c6676ff50,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.305
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ce85395394a9ae43b5b606c6676ff50,
         type: 3}
@@ -238,33 +238,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6810419d6480c354b939838e7a584b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 963194227}
-  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python
+  cameraUnit: {fileID: 456410485}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
   scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: 
+  photoSetDir: GeneratorCircular
   base_dir: ImageCaptures
   boundingBox: {x: 1, y: 0.68, z: 0.67}
   target: {fileID: 75852225}
-  mult_r: 1
-  elevations: 3
-  c: 16
+  mult_r: 1.8
   mult_h: 1
+  num_photos: 60
+  hr_ratio: 0
+  r: 0
+  elevations: 3
+  c: 20
 --- !u!114 &75852227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,33 +264,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170fa40538ed68843ae748f38ba5b598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: RaspberryPi
-    Model: RP_imx477
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 963194227}
-  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python
+  cameraUnit: {fileID: 456410485}
+  pythonExecutablePath: ImageCaptures\V3RENV\Scripts\python.exe
   scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: 
+  photoSetDir: GeneratorSpiral
   base_dir: ImageCaptures
   boundingBox: {x: 1, y: 0.68, z: 0.67}
   target: {fileID: 75852225}
-  mult_r: 1
+  mult_r: 1.8
   mult_h: 1
-  num_photos: 48
-  c: 16
+  num_photos: 60
+  hr_ratio: 0
+  r: 0
+  c: 20
 --- !u!114 &75852228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,23 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9f55cc613afd84398de352d22bf50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 963194227}
+  cameraUnit: {fileID: 0}
   pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python
   scriptPath: ImageCaptures/append_metadata.py
   photoSetDir: 
@@ -340,6 +297,10 @@ MonoBehaviour:
   boundingBox: {x: 1, y: 0.68, z: 0.67}
   target: {fileID: 0}
   mult_r: 2
+  mult_h: 1
+  num_photos: 50
+  hr_ratio: 0
+  r: 0
   Rectangle: {x: 2, y: 0}
   chamferScale: 0.75
   chamfer_edges: 2
@@ -606,7 +567,7 @@ Transform:
   - {fileID: 206698860}
   - {fileID: 1018896007}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160375310
 GameObject:
@@ -619,13 +580,14 @@ GameObject:
   - component: {fileID: 160375312}
   - component: {fileID: 160375311}
   - component: {fileID: 160375313}
+  - component: {fileID: 160375314}
   m_Layer: 0
   m_Name: UtahTeapot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &160375311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,33 +600,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6810419d6480c354b939838e7a584b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 456410483}
+  cameraUnit: {fileID: 456410485}
   pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
   scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: _UtahTeapotCircular
+  photoSetDir: UtahTeapotCircular
   base_dir: ImageCaptures
   boundingBox: {x: 0.41, y: 0.32, z: 0.65}
   target: {fileID: 160375312}
-  mult_r: 1.5
-  elevations: 3
-  c: 16
-  mult_h: 1.2
+  mult_r: 2
+  mult_h: 0.5
+  num_photos: 40
+  hr_ratio: 0
+  r: 0
+  elevations: 2
+  c: 20
 --- !u!4 &160375312
 Transform:
   m_ObjectHideFlags: 0
@@ -673,13 +622,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160375310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0051568598, y: 0.465, z: 0.09493941}
+  m_LocalPosition: {x: 0, y: 0.465, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 786712475}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &160375313
 MonoBehaviour:
@@ -693,33 +642,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170fa40538ed68843ae748f38ba5b598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 456410483}
+  cameraUnit: {fileID: 456410485}
   pythonExecutablePath: ImageCaptures\V3RENV\Scripts\python.exe
   scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: _UtahTeapotSpiral
+  photoSetDir: UtahTeapotSpiral_DEBUG
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.41, y: 0.32, z: 0.65}
+  target: {fileID: 160375312}
+  mult_r: 2
+  mult_h: 0.5
+  num_photos: 40
+  hr_ratio: 0
+  r: 0
+  c: 20
+--- !u!114 &160375314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160375310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b256940397ccfd547b54f2d71d225f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 0}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: _UtahTeapotRandom
   base_dir: ImageCaptures
   boundingBox: {x: 0.41, y: 0.32, z: 0.65}
   target: {fileID: 160375312}
   mult_r: 1.5
-  mult_h: 1.2
+  mult_h: 1
   num_photos: 48
+  hr_ratio: 0
+  r: 0
+  segments: 4
   c: 16
+  onlyrandomelevation: 1
 --- !u!1 &206698859
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,37 +932,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &454457215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454457216}
-  m_Layer: 0
-  m_Name: Target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454457216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454457215}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.139, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 786712475}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456410478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +946,7 @@ GameObject:
   - component: {fileID: 456410481}
   - component: {fileID: 456410480}
   - component: {fileID: 456410479}
+  - component: {fileID: 456410485}
   m_Layer: 0
   m_Name: RaspberryPICam-6mm
   m_TagString: MainCamera
@@ -1039,7 +971,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1050,7 +982,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456410478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -1255,14 +1187,43 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456410478}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.103, y: 0.592, z: 1.124}
+  m_LocalRotation: {x: -0.000000007450581, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.504, y: 0.45399997, z: -0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &456410485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456410478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92dd73d351291394daec593bec902bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metadata:
+    ImageWidth: 0
+    ImageHeight: 0
+    Make: RaspberryPi
+    Model: RP_imx477
+    FocalLength: 0
+    FocalLengthIn35mmFilm: 0
+    FNumber: 0
+    ExposureTime: 0
+    ISOSpeedRatings: 0
+    DateTimeOriginal: 
+    DateTimeDigitized: 
+    Orientation: 0
+    Flash: 0
+    PixelXDimension: 0
+    PixelYDimension: 0
+  vFov: 44
 --- !u!1 &456572285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1293,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476305254
 GameObject:
@@ -2692,7 +2653,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!115 &727456327
 MonoScript:
@@ -2742,96 +2703,12 @@ Transform:
   m_Father: {fileID: 140290223}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &786712473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e9347874574c34281de62dba7cb8b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1594440760}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &786712474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786712473}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6810419d6480c354b939838e7a584b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 963194227}
-  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python
-  scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: 
-  base_dir: ImageCaptures
-  boundingBox: {x: 0.41, y: 0.32, z: 0.65}
-  target: {fileID: 454457216}
-  mult_r: 2
-  elevations: 3
-  c: 6
-  mult_h: 2
 --- !u!4 &786712475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4e9347874574c34281de62dba7cb8b2,
     type: 3}
   m_PrefabInstance: {fileID: 1594440760}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &786712476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786712473}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 170fa40538ed68843ae748f38ba5b598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  metadata:
-    ImageWidth: 0
-    ImageHeight: 0
-    Make: 
-    Model: 
-    FocalLength: 0
-    FocalLengthIn35mmFilm: 0
-    FNumber: 0
-    ExposureTime: 0
-    ISOSpeedRatings: 0
-    DateTimeOriginal: 
-    DateTimeDigitized: 
-    Orientation: 0
-    Flash: 0
-    PixelXDimension: 0
-    PixelYDimension: 0
-  poseCamera: {fileID: 456410483}
-  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python
-  scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: 
-  base_dir: ImageCaptures
-  boundingBox: {x: 0.41, y: 0.32, z: 0.65}
-  target: {fileID: 0}
-  mult_r: 2
-  mult_h: 1
-  num_photos: 50
-  c: 16
 --- !u!1 &792095572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,6 +3143,85 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &938772479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1824894507}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.069
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.531
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.066
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59be30ea2e97bb14da293137197273b9,
+        type: 3}
+      propertyPath: m_Name
+      value: bun_zipper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59be30ea2e97bb14da293137197273b9, type: 3}
+--- !u!4 &938772480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59be30ea2e97bb14da293137197273b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 938772479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,9 +3263,9 @@ Camera:
   m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 1
-  m_Iso: 1200
+  m_Iso: 1250
   m_ShutterSpeed: 0.004
-  m_Aperture: 1.79
+  m_Aperture: 1.71
   m_FocusDistance: 1.07
   m_FocalLength: 4.71
   m_BladeCount: 5
@@ -4172,6 +4128,268 @@ Transform:
   m_Father: {fileID: 140290223}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1193985065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193985071}
+  - component: {fileID: 1193985070}
+  - component: {fileID: 1193985069}
+  - component: {fileID: 1193985068}
+  - component: {fileID: 1193985067}
+  - component: {fileID: 1193985066}
+  m_Layer: 0
+  m_Name: RaspberryPICam-6mm (1)
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1193985066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1193985067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 11ef68407979db849b9a029196c918ac, type: 2}
+--- !u!114 &1193985068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearColorMode: 2
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 2
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 2
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  fsrOverrideSharpness: 0
+  fsrSharpness: 0.92
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 140666587840333
+      data2: 13763000512783810584
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 9
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+--- !u!81 &1193985069
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_Enabled: 1
+--- !u!20 &1193985070
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 1200
+  m_ShutterSpeed: 0.004
+  m_Aperture: 1.79
+  m_FocusDistance: 0.1
+  m_FocalLength: 6
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 6.287, y: 4.7142}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.05
+  far clip plane: 1000
+  field of view: 42.894768
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1193985071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193985065}
+  m_LocalRotation: {x: -0.000000007450581, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1346966660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,7 +4861,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347418956
 GameObject:
@@ -4908,7 +5126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569346771
 GameObject:
@@ -5207,20 +5425,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4e9347874574c34281de62dba7cb8b2,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 454457216}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e9347874574c34281de62dba7cb8b2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 786712474}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e9347874574c34281de62dba7cb8b2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 786712476}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e9347874574c34281de62dba7cb8b2, type: 3}
 --- !u!1 &1600913754
 GameObject:
@@ -6461,7 +6667,7 @@ MonoBehaviour:
   m_ObsoleteContactShadows: 0
   m_PointlightHDType: 1
   m_SpotLightShape: 0
-  m_AreaLightShape: 1
+  m_AreaLightShape: 2
 --- !u!108 &1787535561
 Light:
   m_ObjectHideFlags: 0
@@ -6471,10 +6677,10 @@ Light:
   m_GameObject: {fileID: 1787535558}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 4
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 39.788734
+  m_Intensity: 50.660587
   m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6513,14 +6719,14 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 5000
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 3}
-  m_UseBoundingSphereOverride: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -3.3012727e+31}
+  m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6739,7 +6945,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1810362646
 PrefabInstance:
@@ -7006,7 +7212,7 @@ PrefabInstance:
     - target: {fileID: 8688982062548017324, guid: e6084503f826bbb428b1e677dc1a75d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8688982062548017324, guid: e6084503f826bbb428b1e677dc1a75d4,
         type: 3}
@@ -7139,8 +7345,66 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1824894506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1824894507}
+  - component: {fileID: 1824894509}
+  m_Layer: 0
+  m_Name: StanfordBunny
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1824894507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824894506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 938772480}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824894509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824894506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170fa40538ed68843ae748f38ba5b598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 456410485}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: StanfordBunny
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.78, y: 0.78, z: 0.61}
+  target: {fileID: 1824894507}
+  mult_r: 2
+  mult_h: 1
+  num_photos: 60
+  hr_ratio: 0
+  r: 0
+  c: 20
 --- !u!1 &1933427036
 GameObject:
   m_ObjectHideFlags: 0
@@ -7286,7 +7550,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003421780
 GameObject:
@@ -7400,7 +7664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2083221513
 GameObject:

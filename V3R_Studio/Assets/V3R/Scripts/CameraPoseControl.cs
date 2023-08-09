@@ -36,78 +36,99 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using DG.Tweening;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using UnityEditor;
+using ThaIntersect;
 
 namespace ThaIntersect.V3R{    
     public class CameraPoseControl : MonoBehaviour {
-        Transform camTransform;
-        [SerializeField] Metadata metadata;
-        [Tooltip("Reference to the camera doing the capture")] [SerializeField] Camera poseCamera;
-        public string pythonExecutablePath = @"ImageCaptures/V3RENV/Scripts/python"; // e.g., "C:\Python38\python.exe"
+        [Tooltip("Reference to the camera unit doing the capture")] [SerializeField] CameraUnit cameraUnit;
+        public string pythonExecutablePath = @"ImageCaptures/V3RENV/Scripts/python.exe"; // e.g., "C:\Python38\python.exe"
         public string scriptPath = @"ImageCaptures/append_metadata.py"; // e.g., "Assets/Scripts/append_metadata.py"
         public string photoSetDir = "";
         protected List<FakeTransform> waypointTransforms = new List<FakeTransform>();
-        private RenderTexture renderTexture;
-        private Texture2D tex;
         [SerializeField] protected string base_dir = "ImageCaptures";
-        protected string savePath;
+        protected string savePath, saveDirname;
         [SerializeField] protected Vector3 boundingBox;
         [Tooltip("Object to Reconstruct")] [SerializeField] protected Transform target;
         [Tooltip("Radial distance from the target to the camera")] public float mult_r = 2f;
+        [Tooltip("Y Displacement")]public float mult_h = 1f;
+        [Tooltip("Number of Photos #")]public float num_photos = 50f;
+        [ReadOnly] [SerializeField] float hr_ratio;
+        public float r;
 
-        protected void Start() {
-            camTransform = poseCamera.transform;
-            if( target == null ) target = this.transform;
-            
+        protected void Start()
+        {
+            if (target == null) target = this.transform;
+            saveDirname = $"{photoSetDir}_{num_photos.ToString()}_{mult_h.ToString()}_{mult_r.ToString()}";
+            savePath = Directory.GetParent(Application.dataPath) + $"/{base_dir}/{saveDirname}";
+            Calc_HR_Ratio();
+
         }
 
-        void setupMetadata(){
-            metadata.Make = "RaspberryPi";
-            metadata.Model = "RP_imx477";
-            metadata.FNumber = poseCamera.aperture;
-            metadata.FocalLength = poseCamera.focalLength;
-            metadata.ISOSpeedRatings = poseCamera.iso;
-            CreateMetadataFile();
+        void Calc_HR_Ratio()
+        {
+            r = Mathf.Sqrt(
+                            (boundingBox.x * boundingBox.x) + 
+                            (boundingBox.z * boundingBox.z)
+                        )/2.0f;
+
+            var vfov = cameraUnit.Get_vFov();
+
+            float h_2 = boundingBox.y / 2f;
+
+            float fovL = h_2 / Mathf.Tan(Mathf.Deg2Rad * vfov)/2;
+
+            hr_ratio = fovL/r;
         }
 
-        
-     
+
+
+
+
         // Positions the camera and captures screenshots of the gameview
         public IEnumerator PositionCamera(){
             for (int i = 0; i < waypointTransforms.Count; i++)
             {
                 
-                // camTransform.position = waypointTransforms[i].position;
-                camTransform.DORotateQuaternion(waypointTransforms[i].rotation,2);
-            
-                camTransform.DOMove( waypointTransforms[i].position,2);
-                
+                cameraUnit.MoveCamera( waypointTransforms[i].position, waypointTransforms[i].rotation );    
 
                 yield return new WaitForSeconds(2);
-                // ScreenCapture.CaptureScreenshot($"{dir}/{i.ToString()}.png", 1);
-                
-                renderTexture = new RenderTexture( Screen.width, Screen.height, 24 );
-        
-                // Convert RenderTexture to Texture2D
-                tex = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-                poseCamera.targetTexture = renderTexture;
-                poseCamera.Render();
-                RenderTexture.active = renderTexture;
-                tex.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
-                tex.Apply();
-                
-                // Encode Texture2D to JPG
-                byte[] bytes = tex.EncodeToJPG();
-                Destroy(tex);
-                poseCamera.targetTexture = null;
+
+
+                byte[] bytes = cameraUnit.TakeSnap();
 
                 // Write to a file 
-                File.WriteAllBytes($"{savePath}/{((i+1f)/100f).ToString()}.jpg", bytes);
+                File.WriteAllBytes($"{savePath}/{(i+1f).ToString()}.jpg", bytes);
                 yield return new WaitForSeconds(2);            
             }
             AppendMetadata();
+            CreateWaypointsRefFile();
+
+            #if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+            #else
+            Debug.Log( "Failed to Exit Playmode" );
+            #endif
+        }
+
+        private void CreateWaypointsRefFile()
+        {
+            var GTPoses = new List<GTPose>();
+            foreach (var t in waypointTransforms)
+            {
+                GTPoses.Add(
+                    new GTPose(){
+                        position = t.position.ToString(),
+                        rotation = t.rotation.ToString()
+                    }
+                );
+
+            }
+            string json = JsonConvert.SerializeObject(GTPoses, Formatting.Indented);
+            File.WriteAllText(Path.Combine(Application.dataPath, savePath+"/waypoints.json"), json);
+            
         }
 
         void AppendMetadata(){
@@ -132,7 +153,7 @@ namespace ThaIntersect.V3R{
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = pythonExecutablePath,
-                    Arguments = $"{BASE_DIR}/{scriptPath} {photoSetDir}",
+                    Arguments = $"{BASE_DIR}/{scriptPath} {saveDirname}",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true
@@ -158,8 +179,8 @@ namespace ThaIntersect.V3R{
         }
 
         public void InitialisePhotoShoot(){
-            savePath = Directory.GetParent(Application.dataPath )+"/"+base_dir+"/"+photoSetDir;
             
+
             if( !Directory.Exists( savePath ) ) {
                 var dirInfo = Directory.CreateDirectory(savePath);
                 // If the directory is read-only, make it writable
@@ -167,12 +188,13 @@ namespace ThaIntersect.V3R{
             }else{
                 UnityEngine.Debug.Log($"The Folder {savePath} already exits");
             }
-            setupMetadata();
+            CreateMetadataFile();
             StartCoroutine( PositionCamera() );
         }
 
+
         void CreateMetadataFile(){
-            
+            var metadata = cameraUnit.GetMetaData();
             string json = JsonConvert.SerializeObject(metadata, Formatting.Indented);
             File.WriteAllText(Path.Combine(Application.dataPath, savePath+"/metadata.json"), json);
         }
@@ -192,7 +214,25 @@ namespace ThaIntersect.V3R{
                 // transform.rotation = targetRotation;
                 return targetRotation;            
         }
+
+        protected void UpdateWayPointsAboutY(float x, float y, float z)
+        {
+            var obj = new GameObject();
+            Vector3 point = new Vector3(x, y, z);
+            obj.transform.position = point;
+            obj.transform.rotation = LookAtTargetYAxisOnly(obj.transform.position);
+            waypointTransforms.Add(new FakeTransform
+            {
+                position = obj.transform.position,
+                rotation = obj.transform.rotation
+            });
+            Destroy(obj);
+        }
     }
 
+    public class GTPose{
+        public string position;
+        public string rotation;
+    }
 
 }

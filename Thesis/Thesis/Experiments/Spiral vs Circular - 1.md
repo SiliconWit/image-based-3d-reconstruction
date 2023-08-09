@@ -1,3 +1,4 @@
+#meshroom #experiment
 ## Description
 The target object was the UtahTeapotSkewedTex.
 Bounding Box is 0.41, 0.32 & 0.65.
@@ -31,5 +32,5 @@ Despite the Spiral pattern having more landmarks, the camera poses were not corr
 The Circular reconstruction also has some of these insets. However, it has more complete surfaces than the spiral 
 
 **The Spiral Pattern has to be fixed first**
-It turns out that calculation of the angle theta in the `SpiralWaypointGenerator` script was the cause of the problem
+It turns out that calculation of the angle theta in the `SpiralWaypointGenerator` script was the cause of the problem.
 

@@ -14,7 +14,6 @@ namespace ThaIntersect.V3R{
     {
         [Tooltip("Total number of poses")] public int elevations = 3;
         [Tooltip("Number of poses for a single y position")] public int c = 16;
-        [Tooltip("Y Displacement")]public float mult_h = .2f;
         
         /// <summary>
         /// 2nd Commit Additions

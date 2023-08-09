@@ -1,0 +1,3 @@
+- SFM - SfM is the process of reconstructing 3D structure from its projections into a series of images taken from different viewpoints. [[schonbergerStructurefromMotionRevisited2016]]
+- Incremental sFM adds an iterative component to sfM.
+- Bundle Adjust

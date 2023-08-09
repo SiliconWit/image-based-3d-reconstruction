@@ -44,7 +44,6 @@ namespace ThaIntersect.V3R{
     {
         [Tooltip("Total number of poses")] public int elevations = 3;
         [Tooltip("Number of poses for a single y position")] public int c = 16;
-        [Tooltip("Y Displacement")]public float mult_h = 1f;
 
         private void Awake() {
 
@@ -61,13 +60,9 @@ namespace ThaIntersect.V3R{
         // Creates positions and orientations in 3D space of the camera during "Capture"
         void CreatePosePoints()
         {
-            float r = Mathf.Sqrt( 
-                (boundingBox.x * boundingBox.x) + (boundingBox.z * boundingBox.z)
-            );
-
             float y = target.position.y;
             
-            var y0 = target.position.y -  (boundingBox.y * mult_h)/2;
+            var y0 = y -  (boundingBox.y * mult_h)/2;
 
             for (int i = 0; i < elevations; i++)
             {

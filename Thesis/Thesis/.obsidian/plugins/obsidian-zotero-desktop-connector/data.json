@@ -1,0 +1,29 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "Papers/",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [
+    {
+      "name": "Cite",
+      "format": "template",
+      "cslStyle": "ieee-with-url",
+      "template": "{{citekey}}"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "Import Paper",
+      "outputPathTemplate": "Papers/{{citekey}}.md",
+      "imageOutputPathTemplate": "Media/Papers/{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "templatePath": "Templates/Zotero Template DH.md",
+      "cslStyle": "ieee-with-url"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{citekey}}]]",
+  "openNoteAfterImport": true,
+  "whichNotesToOpenAfterImport": "first-imported-note",
+  "shouldConcat": true
+}
