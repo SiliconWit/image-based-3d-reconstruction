@@ -1,0 +1,1 @@
+The amount of light and evenness and diffusion is critical for complex shaped objects. This may lead to a controlled environment to get adequate photos for 

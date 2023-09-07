@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 namespace ThaIntersect.V3R
@@ -13,21 +14,22 @@ namespace ThaIntersect.V3R
         [Tooltip("Min Pose Points for the longer edges")][SerializeField] int longer_edges = 4;
         enum Planes{ XY=0, XZ, YZ  }
         [SerializeField] Planes plane;
-        List<Vector3> rect_vertices;
-        List<ValueTuple<Vector3, Vector3>> rect_edges = new List<(Vector3, Vector3)>();
-        List<ValueTuple<Vector3, Vector3>> edges = new List<(Vector3, Vector3)>();
+        [Tooltip("Total number of poses")] public int elevations = 3;
+        List<(Vector3, Vector3)> edges = new List<(Vector3, Vector3)>();
+        List<FakeTransform> levelTransforms = new List<FakeTransform>();
+        
 
         new void Start()
         {
             base.Start();
-            generate_rectangle();   
+            edges = generate_rectangle();   
             CreatePosePoints();
             InitialisePhotoShoot();
         }
 
         private void CreatePosePoints()
         {
-
+            
             for (int i = 0; i < edges.Count; i++)
             {
                 var edge_vec = edges[i].Item2 - edges[i].Item1;
@@ -45,6 +47,27 @@ namespace ThaIntersect.V3R
                     distribute_points_around( edge_vec, midpoint, longer_edges, angle_deg );
                 }else{
                     distribute_points_between( edge_vec, midpoint, chamfer_edges, angle_deg );
+                }
+
+            }
+            float y = target.position.y;
+            var y0 = y -  (boundingBox.y * mult_h)/2;
+            print( levelTransforms.Count );
+            for (int j = 0; j < elevations; j++)
+            {
+                foreach (var levelPose in levelTransforms)
+                {   
+                    // levelPose.position.y = y0 + ((boundingBox.y * mult_h/(elevations-1)) * j);
+                    waypointTransforms.Add( 
+                        new FakeTransform{
+                            rotation = levelPose.rotation,
+                            position = new Vector3(
+                                levelPose.position.x,
+                                y0 + ((boundingBox.y * mult_h/(elevations-1)) * j),
+                                levelPose.position.z
+                            )
+                        }
+                        );
                 }
             }
             // foreach (var edge in edges)
@@ -76,11 +99,11 @@ namespace ThaIntersect.V3R
             {
                 Vector3 pointPosition = startPoint + (_edge_vec.normalized * i * spacing);
                 
-                // var obj = new GameObject();
-                var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);//.transform.position = pointPosition;
+                var obj = new GameObject();
+                // var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);//.transform.position = pointPosition;
                 obj.transform.position = pointPosition;
                 obj.transform.rotation = qtn;
-                waypointTransforms.Add(new FakeTransform{
+                levelTransforms.Add(new FakeTransform{
                     position = obj.transform.position,
                     rotation = obj.transform.rotation
                 });
@@ -107,10 +130,11 @@ namespace ThaIntersect.V3R
             {
                 Vector3 pointPosition = startPoint + (_edge_vec.normalized * i * spacing);
                 
-                var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);//.transform.position = pointPosition;
+                var obj = new GameObject();
+                // var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);//.transform.position = pointPosition;
                 obj.transform.position = pointPosition;
                 obj.transform.rotation = qtn;
-                waypointTransforms.Add(new FakeTransform{
+                levelTransforms.Add(new FakeTransform{
                     position = obj.transform.position,
                     rotation = obj.transform.rotation
                 });
@@ -124,7 +148,10 @@ namespace ThaIntersect.V3R
             }
         }
 
-        void generate_rectangle(){
+        List<(Vector3, Vector3)> generate_rectangle(){
+            var rect_vertices = new List<Vector3>();
+            var rect_edges = new List<(Vector3, Vector3)>();
+            var edges = new List<(Vector3, Vector3)>();
 
             float r = Mathf.Sqrt( 
                 (boundingBox.x * boundingBox.x) + (boundingBox.z * boundingBox.z)
@@ -189,7 +216,7 @@ namespace ThaIntersect.V3R
                 ));                
             }
             
-            
+            return edges;   
         }
 
         // void spawnSphere(Vector3 pos){

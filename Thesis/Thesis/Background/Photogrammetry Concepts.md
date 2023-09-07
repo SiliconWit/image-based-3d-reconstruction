@@ -1,4 +1,17 @@
 #sfm #camera-poses #incremental-sfm #descriptors
+
+#### Definitions
+**Definition of Photogrammetry**: Photogrammetry is a survey technique that allows for the building of 3D models starting from digitized output data (2D images) (Mikhail et al. 2001).
+
+- The process of deriving metric information about an object from a 2-dimensional graphical image of the same object.
+- The process of deriving metric information about an object through measurements of photos
+- The inverse process of photography.
+
+
+
+**Definition of SfM**: Local motion signals are determined through a technique called Structure-from-Motion (SfM) in which the camera is fixed and the target rotates or the camera moves around the fixed target (Schonberger and Frahm 2016).
+
+Photogrammetry is afforbable, powerful, readily accessible and versaatile in appliocatioes where surface data acquisition is requried. It oofers recsonstruction results equivalen to other techniques that are more expensive and cumbersome. 
 ## Incremental Structure from Motion
 Incremental Structure from Motion (SfM) is a computer vision technique used to reconstruct a 3D structure from a sequence of 2D images. The "motion" part of the name indicates that it often involves analyzing the relative motion of the camera and the scene across these images. The "incremental" part means that the 3D structure is built progressively, one image at a time.
 

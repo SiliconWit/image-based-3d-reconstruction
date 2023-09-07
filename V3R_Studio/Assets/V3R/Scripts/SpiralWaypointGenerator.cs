@@ -26,7 +26,7 @@
     1. Start(): Overrides the base class's Start() method to generate waypoints and initializes the photo shoot.
     2. CreatePosePoints(): Generates the spiral pattern of waypoints based on the given parameters.
 
-    Inheritance:
+Inheritance:
     This script inherits from the CameraPoseControl class. As a result, it can make use of 
     its methods, fields, and properties, especially the ones related to camera positioning and capturing.
 

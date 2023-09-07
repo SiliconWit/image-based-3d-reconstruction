@@ -43,11 +43,11 @@ using ThaIntersect;
 
 namespace ThaIntersect.V3R{    
     public class CameraPoseControl : MonoBehaviour {
-        [Tooltip("Reference to the camera unit doing the capture")] [SerializeField] CameraUnit cameraUnit;
+        [Tooltip("Reference to the camera unit doing the capture")] [SerializeField] protected CameraUnit cameraUnit;
         public string pythonExecutablePath = @"ImageCaptures/V3RENV/Scripts/python.exe"; // e.g., "C:\Python38\python.exe"
         public string scriptPath = @"ImageCaptures/append_metadata.py"; // e.g., "Assets/Scripts/append_metadata.py"
         public string photoSetDir = "";
-        protected List<FakeTransform> waypointTransforms = new List<FakeTransform>();
+        [SerializeField] protected List<FakeTransform> waypointTransforms = new List<FakeTransform>();
         [SerializeField] protected string base_dir = "ImageCaptures";
         protected string savePath, saveDirname;
         [SerializeField] protected Vector3 boundingBox;
@@ -57,6 +57,8 @@ namespace ThaIntersect.V3R{
         [Tooltip("Number of Photos #")]public float num_photos = 50f;
         [ReadOnly] [SerializeField] float hr_ratio;
         public float r;
+        public float h;
+        public float v_overlap;
 
         protected void Start()
         {
@@ -64,7 +66,7 @@ namespace ThaIntersect.V3R{
             saveDirname = $"{photoSetDir}_{num_photos.ToString()}_{mult_h.ToString()}_{mult_r.ToString()}";
             savePath = Directory.GetParent(Application.dataPath) + $"/{base_dir}/{saveDirname}";
             Calc_HR_Ratio();
-
+            Calc_R();
         }
 
         void Calc_HR_Ratio()
@@ -83,7 +85,19 @@ namespace ThaIntersect.V3R{
             hr_ratio = fovL/r;
         }
 
+        public void Calc_R(){
+            var hfov = cameraUnit.Get_hFov();
+            var opp = Mathf.Max( boundingBox.x, boundingBox.z )/2f;
+            var adj = opp/Mathf.Tan( (Mathf.Deg2Rad * hfov)/2f );
+            r = adj;
+        }
 
+        public void Calc_H(){
+            var vfov = cameraUnit.Get_vFov();
+            var opp = r * mult_r * Mathf.Tan( (Mathf.Deg2Rad * vfov)/2f );
+            h = opp * 2;
+
+        }
 
 
 
@@ -92,16 +106,16 @@ namespace ThaIntersect.V3R{
             for (int i = 0; i < waypointTransforms.Count; i++)
             {
                 
-                cameraUnit.MoveCamera( waypointTransforms[i].position, waypointTransforms[i].rotation );    
+                cameraUnit.MoveCamera( waypointTransforms[i].position, waypointTransforms[i].rotation, .5f );    
 
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
 
 
                 byte[] bytes = cameraUnit.TakeSnap();
 
                 // Write to a file 
                 File.WriteAllBytes($"{savePath}/{(i+1f).ToString()}.jpg", bytes);
-                yield return new WaitForSeconds(2);            
+                yield return new WaitForSeconds(1);            
             }
             AppendMetadata();
             CreateWaypointsRefFile();

@@ -8,24 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b35f5a865361e02f",
+            "id": "0c91220d810a95e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Background/Photogrammetry Concepts.md",
+                "file": "Experiments/Note on the Preliminary Experiments.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "0c91220d810a95e6",
+            "id": "0019465db972b361",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Background/Photogrammetry Concepts.md",
+                "file": "Methodology/Scene Setup.md",
                 "mode": "source",
                 "source": false
               }
@@ -35,19 +35,15 @@
             "id": "881c2b3cf2da753d",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Questions.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "Methodology/Solution A.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -113,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Questions.canvas",
+                "file": "Experiments/Note on the Preliminary Experiments.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Questions.canvas",
+                "file": "Experiments/Note on the Preliminary Experiments.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Questions.canvas"
+                "file": "Experiments/Note on the Preliminary Experiments.md"
               }
             }
           }
@@ -174,51 +170,56 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "881c2b3cf2da753d",
+  "active": "0c91220d810a95e6",
   "lastOpenFiles": [
-    "Solutions and Ideas/Using Voxels.md",
-    "Questions.canvas",
-    "Papers/lartigueVoxelbasedPathPlanning2014.md",
-    "Solutions and Ideas",
-    "Papers/lartigueVoxelbasedPathPlanning2014a.md",
-    "Media/Papers/lartigueVoxelbasedPathPlanning2014/image-4-x53-y293.png",
+    "Methodology/Solution A.md",
+    "Experiments/Effect of Light.md",
+    "Experiments/attachments/Pasted image 20230907041220.png",
+    "Experiments/attachments/Pasted image 20230907031617.png",
+    "Experiments/attachments/Pasted image 20230907030001.png",
+    "Experiments/attachments/Pasted image 20230907025702.png",
+    "Experiments/attachments/Pasted image 20230907023142.png",
+    "Experiments/attachments/Pasted image 20230907021618.png",
+    "Experiments/attachments/Pasted image 20230907020114.png",
+    "Experiments/attachments/Pasted image 20230907011855.png",
+    "Experiments/Spiral vs Circular - 2.md",
+    "Experiments/Stanford Bunny.md",
+    "Experiments/Spiral vs Circular - 1.md",
+    "Experiments/Records.md",
+    "Experiments/Note on the Preliminary Experiments.md",
+    "Experiments/Evaluation Process.md",
+    "Background/Background Overview.md",
+    "Problem Statement & Objectives/Objectives.md",
+    "Methodology/Scene Setup.md",
+    "Problem Statement & Objectives/Problem Statement.md",
+    "Problem Statement & Objectives/Problems with Current Capture Automation Ideas.md",
+    "Problem Statement & Objectives/Some Problems.md",
+    "Experiments/attachments/Pasted image 20230903012408.png",
+    "Experiments/attachments/Pasted image 20230903005305.png",
     "Background/Photogrammetry Concepts.md",
-    "Media/Papers/lartigueVoxelbasedPathPlanning2014",
-    "Media/Papers",
+    "Methodology/Camera Lenses vs Sensor Size.md",
+    "Evaluation/Cloud Compare.md",
+    "Methodology/Model Free vs Model Based.md",
+    "Methodology/Questions to (probably)Answer.md",
+    "Methodology/3D Models for Reconstruction.md",
+    "Methodology/Factors for Preliminary Capture Experiments.md",
+    "Methodology/Setting up Camera Distortion.md",
+    "Methodology/Missed Out Literature on Photogrammetry Parameters.md",
     "Methodology/Colmap.md",
     "Background/Glossary.md",
-    "Papers/schonbergerStructurefromMotionRevisited2016.md",
-    "Untitled.md",
-    "lartigueVoxelbasedPathPlanning2014a.md",
-    "Templates/Zotero Template DH.md",
-    "{{annotation.imageRelativePath}}.md",
-    "Templates/Zotero Template.md",
-    "pichatSurveyMethods3D2018.md",
+    "Experiments/attachments",
+    "Evaluation",
+    "Random Points.md",
+    "Questions.canvas",
+    "Solutions and Ideas",
+    "Media/Papers/lartigueVoxelbasedPathPlanning2014",
+    "Media/Papers",
     "Untitled 1.canvas",
-    "Sprial.md",
-    "Methodology/Factors for Preliminary Capture Experiments.md",
-    "2023-07-28.md",
     "Papers",
-    "lartigueVoxelbasedPathPlanning2014.md",
-    "Zotero Template DH.md",
-    "Zotero Template.md",
     "Templates",
-    "Problem Statement & Objectives/Some Problems.md",
     "Media",
-    "Problem Statement & Objectives/Objectives.md",
-    "Background/Background Overview.md",
     "Problem Statement & Objectives",
-    "Experiments/Spiral vs Circular - 2.md",
-    "Experiments/Spiral vs Circular - 1.md",
-    "Pasted image 20230726231607.png",
     "Experiments",
-    "2023-07-26.md",
-    "Background",
-    "Methodology/Untitled.canvas",
-    "Pasted image 20230725004429.png",
-    "Pasted image 20230724230729.png",
-    "Pasted image 20230724230036.png",
-    "Pasted image 20230724230027.png",
-    "Methodology"
+    "Methodology/Untitled.canvas"
   ]
 }

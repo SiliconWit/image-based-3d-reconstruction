@@ -9,21 +9,15 @@ namespace ThaIntersect.V3R
     public class CameraUnit : MonoBehaviour
     {
         [SerializeField] Metadata metadata;
-        [SerializeField] float vFov; 
+        [SerializeField] float vFov;
+        [SerializeField] float hFov;
         Camera _camera;
         private RenderTexture renderTexture;
         private Texture2D tex;
 
         private void Awake() {
             _camera = GetComponent<Camera>();
-            SetupMetadata();
-            
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
+            SetupMetadata();            
         }
 
         void SetupMetadata(){
@@ -45,6 +39,9 @@ namespace ThaIntersect.V3R
 
         // Get the Vertical FoV
         public float Get_vFov() => vFov;
+
+        // Get the Horizontal FoV
+        public float Get_hFov() => hFov;
 
         internal byte[] TakeSnap()
         {
