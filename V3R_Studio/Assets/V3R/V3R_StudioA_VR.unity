@@ -374,13 +374,15 @@ GameObject:
   - component: {fileID: 160375311}
   - component: {fileID: 160375313}
   - component: {fileID: 160375314}
+  - component: {fileID: 160375315}
+  - component: {fileID: 160375316}
   m_Layer: 0
   m_Name: UtahTeapot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &160375311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,23 +395,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6810419d6480c354b939838e7a584b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraUnit: {fileID: 456410485}
+  cameraUnit: {fileID: 1088257856}
   pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
   scriptPath: ImageCaptures/append_metadata.py
-  photoSetDir: UtahTeapotCircularLamp
+  photoSetDir: UtahTeapotCircularMix
   waypointTransforms: []
   base_dir: ImageCaptures
   boundingBox: {x: 0.41, y: 0.32, z: 0.65}
   target: {fileID: 160375312}
-  mult_r: 1.5
-  mult_h: 0.5
-  num_photos: 70
+  mult_r: 2.2
+  mult_h: 1
+  num_photos: 32
   hr_ratio: 0
   r: 0
   h: 0
   v_overlap: 0
   elevations: 2
-  c: 35
+  c: 16
 --- !u!4 &160375312
 Transform:
   m_ObjectHideFlags: 0
@@ -433,7 +435,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160375310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 170fa40538ed68843ae748f38ba5b598, type: 3}
   m_Name: 
@@ -484,6 +486,61 @@ MonoBehaviour:
   segments: 4
   c: 16
   onlyrandomelevation: 1
+--- !u!114 &160375315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160375310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c1a5513cdcdc041ac2957a9654c2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 1088257856}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: TeapotMultiRad2Levels_30x1_6x3
+  waypointTransforms: []
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.41, y: 0.32, z: 0.65}
+  target: {fileID: 160375312}
+  mult_r: 2
+  mult_h: 1
+  num_photos: 48
+  hr_ratio: 0
+  r: 0
+  h: 0
+  v_overlap: 0
+  levels: 2
+--- !u!114 &160375316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160375310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967e4370d304f0644be945ce859b6129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 1088257856}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: UtahTeapotManual
+  waypointTransforms: []
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.41, y: 0.32, z: 0.65}
+  target: {fileID: 160375312}
+  mult_r: 0
+  mult_h: 1
+  num_photos: 50
+  hr_ratio: 0
+  r: 0
+  h: 0
+  v_overlap: 0
 --- !u!1 &206698859
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 200
+  m_Intensity: 100
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -684,7 +741,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1591.5493
+  m_Intensity: 795.77466
   m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4365,12 +4422,12 @@ MonoBehaviour:
   _enableTranslation: 1
   _translationSpeed: 20
   _enableMovement: 1
-  _movementSpeed: 1.05
+  _movementSpeed: 0.1
   _boostedSpeed: 50
   _boostSpeed: 304
   _moveUp: 101
   _moveDown: 113
-  _enableSpeedAcceleration: 1
+  _enableSpeedAcceleration: 0
   _speedAccelerationFactor: 1.5
   _initPositonButton: 114
 --- !u!114 &1088257856
@@ -4636,15 +4693,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088257854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: 0.45399997, z: -0.442}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.012, y: 0.45399997, z: 0.753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224893447}
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1090671381
 GameObject:
   m_ObjectHideFlags: 0
@@ -8589,7 +8646,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882791828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 967e4370d304f0644be945ce859b6129, type: 3}
   m_Name: 
@@ -8601,14 +8658,42 @@ MonoBehaviour:
   waypointTransforms: []
   base_dir: ImageCaptures
   boundingBox: {x: 0.701, y: 0.702, z: 0.816}
-  target: {fileID: 0}
+  target: {fileID: 2098329048}
   mult_r: 2
   mult_h: 1
-  num_photos: 50
+  num_photos: 16
   hr_ratio: 0
   r: 0
   h: 0
   v_overlap: 0
+--- !u!114 &1882791830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882791828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c1a5513cdcdc041ac2957a9654c2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 1088257856}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: MultiRad2Levels_12x1_12x3
+  waypointTransforms: []
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.701, y: 0.702, z: 0.816}
+  target: {fileID: 2098329048}
+  mult_r: 2
+  mult_h: 1
+  num_photos: 48
+  hr_ratio: 0
+  r: 0
+  h: 0
+  v_overlap: 0
+  levels: 2
 --- !u!1 &1933427036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,7 +9058,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 99bbc3b521b6163468ea7f4f476b9a8c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -8984,4 +9069,47 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1882791829}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99bbc3b521b6163468ea7f4f476b9a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1882791830}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99bbc3b521b6163468ea7f4f476b9a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2098329049}
   m_SourcePrefab: {fileID: 100100000, guid: 99bbc3b521b6163468ea7f4f476b9a8c, type: 3}
+--- !u!4 &2098329048 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99bbc3b521b6163468ea7f4f476b9a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2098329047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2098329049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882791828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6810419d6480c354b939838e7a584b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraUnit: {fileID: 1088257856}
+  pythonExecutablePath: ImageCaptures/V3RENV/Scripts/python.exe
+  scriptPath: ImageCaptures/append_metadata.py
+  photoSetDir: RandomShape2CircularMix
+  waypointTransforms: []
+  base_dir: ImageCaptures
+  boundingBox: {x: 0.701, y: 0.702, z: 0.816}
+  target: {fileID: 2098329048}
+  mult_r: 2.2
+  mult_h: 1
+  num_photos: 48
+  hr_ratio: 0
+  r: 0
+  h: 0
+  v_overlap: 0
+  elevations: 2
+  c: 16

@@ -8,38 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0c91220d810a95e6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Experiments/Note on the Preliminary Experiments.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0019465db972b361",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Methodology/Scene Setup.md",
+                "file": "Experiments/MultiRadial Pattern on the.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "881c2b3cf2da753d",
+            "id": "bb4192a70793055d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "Methodology/Solution A.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.4.12"
               }
             }
           }
@@ -93,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 414.5
   },
   "right": {
     "id": "3331c781f976588c",
@@ -109,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Experiments/Note on the Preliminary Experiments.md",
+                "file": "Experiments/MultiRadial Pattern on the.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Experiments/Note on the Preliminary Experiments.md",
+                "file": "Experiments/MultiRadial Pattern on the.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +135,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Experiments/Note on the Preliminary Experiments.md"
+                "file": "Experiments/MultiRadial Pattern on the.md"
+              }
+            }
+          },
+          {
+            "id": "e985a134c4737245",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
               }
             }
           }
@@ -170,46 +166,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0c91220d810a95e6",
+  "active": "0019465db972b361",
   "lastOpenFiles": [
+    "Experiments/attachments/Pasted image 20230913202944.png",
+    "Experiments/attachments/Pasted image 20230913032145.png",
+    "Experiments/attachments/Pasted image 20230913031624.png",
+    "Experiments/attachments/Pasted image 20230913030132.png",
+    "Experiments/attachments/Pasted image 20230913024245.png",
+    "Experiments/attachments/Pasted image 20230912193659.png",
+    "Experiments/attachments/Pasted image 20230912192250.png",
+    "Experiments/attachments/Pasted image 20230912185837.png",
+    "Experiments/attachments/Pasted image 20230912184903.png",
+    "2023-09-12.md",
+    "Evaluation/Cloud Compare.md",
+    "Experiments/MultiRadial Pattern on the.md",
+    "Experiments/attachments/Pasted image 20230912020708.png",
+    "Experiments/attachments/Pasted image 20230912015526.png",
+    "Background/Point Clouds.md",
+    "Solutions and Ideas/Depth Map and Voxels for Pose Formulations.md",
+    "Scholar Seminar/7th September 2023.md",
+    "Background/Background Overview.md",
     "Methodology/Solution A.md",
-    "Experiments/Effect of Light.md",
-    "Experiments/attachments/Pasted image 20230907041220.png",
-    "Experiments/attachments/Pasted image 20230907031617.png",
-    "Experiments/attachments/Pasted image 20230907030001.png",
-    "Experiments/attachments/Pasted image 20230907025702.png",
-    "Experiments/attachments/Pasted image 20230907023142.png",
-    "Experiments/attachments/Pasted image 20230907021618.png",
-    "Experiments/attachments/Pasted image 20230907020114.png",
-    "Experiments/attachments/Pasted image 20230907011855.png",
+    "WorkPlan.md",
+    "Scholar Seminar",
+    "Methodology/Scene Setup.md",
+    "samaanCLOSERANGEPHOTOGRAMMETRICTOOLS2013.md",
+    "Problem Statement & Objectives/Some Problems.md",
+    "Problem Statement & Objectives/Problem Statement.md",
+    "Problem Statement & Objectives/Problems with Current Capture Automation Ideas.md",
+    "Problem Statement & Objectives/Objectives.md",
+    "Experiments/Effect of Light and Distance.md",
+    "Experiments/Note on the Preliminary Experiments.md",
     "Experiments/Spiral vs Circular - 2.md",
     "Experiments/Stanford Bunny.md",
     "Experiments/Spiral vs Circular - 1.md",
     "Experiments/Records.md",
-    "Experiments/Note on the Preliminary Experiments.md",
     "Experiments/Evaluation Process.md",
-    "Background/Background Overview.md",
-    "Problem Statement & Objectives/Objectives.md",
-    "Methodology/Scene Setup.md",
-    "Problem Statement & Objectives/Problem Statement.md",
-    "Problem Statement & Objectives/Problems with Current Capture Automation Ideas.md",
-    "Problem Statement & Objectives/Some Problems.md",
-    "Experiments/attachments/Pasted image 20230903012408.png",
-    "Experiments/attachments/Pasted image 20230903005305.png",
     "Background/Photogrammetry Concepts.md",
     "Methodology/Camera Lenses vs Sensor Size.md",
-    "Evaluation/Cloud Compare.md",
     "Methodology/Model Free vs Model Based.md",
-    "Methodology/Questions to (probably)Answer.md",
-    "Methodology/3D Models for Reconstruction.md",
-    "Methodology/Factors for Preliminary Capture Experiments.md",
-    "Methodology/Setting up Camera Distortion.md",
-    "Methodology/Missed Out Literature on Photogrammetry Parameters.md",
-    "Methodology/Colmap.md",
-    "Background/Glossary.md",
     "Experiments/attachments",
     "Evaluation",
-    "Random Points.md",
     "Questions.canvas",
     "Solutions and Ideas",
     "Media/Papers/lartigueVoxelbasedPathPlanning2014",
@@ -219,7 +216,6 @@
     "Templates",
     "Media",
     "Problem Statement & Objectives",
-    "Experiments",
     "Methodology/Untitled.canvas"
   ]
 }

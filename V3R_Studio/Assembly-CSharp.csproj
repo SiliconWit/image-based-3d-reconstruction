@@ -45,6 +45,7 @@
      <Compile Include="Assets\V3R\Scripts\RandomWaypointGenerator.cs" />
      <Compile Include="Assets\V3R\Scripts\CameraPoseControl.cs" />
      <Compile Include="Assets\V3R\Scripts\CircularWaypointGenerator.cs" />
+     <Compile Include="Assets\V3R\Scripts\MultiRadialWaypointGenerator.cs" />
      <Compile Include="Assets\V3R\Scripts\V3R.cs" />
      <Compile Include="Assets\V3R\Scripts\SpiralWaypointGenerator.cs" />
      <Compile Include="Assets\dummy.cs" />

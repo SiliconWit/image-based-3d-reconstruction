@@ -11,7 +11,7 @@ The main deliverable is a framework that allows for the autonomous deduction of 
 
 ## Main Objective
 
-To develop and evaluate a novel algorithm for the autonomous determination of optimal camera poses for effective 3D object reconstruction in close-range photogrammetry, leveraging Unity 3D for environment simulation and integration with robotic systems.
+To develop and evaluate a novel algorithm for the autonomous determination of optimal monocular camera poses for effective 3D object reconstruction in close-range photogrammetry, leveraging Unity 3D for environment simulation and integration with robotic systems.
 
 ## Specific Objectives
 
