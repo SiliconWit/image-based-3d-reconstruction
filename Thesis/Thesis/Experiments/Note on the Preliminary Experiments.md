@@ -10,7 +10,7 @@
 	7. The Reconstruction is compared to the 3D model in Step 3 using Cloud Compare.
 	8. The process is then repeated from Step 4 - 7 with different parameters.
 
-The likely noise(unwanted factors) are the 3D model itsetlf and the scene. To remedy the possible effects of the noise, an ideal scene and model had to be sought after.
+The likely noise(unwanted factors) are the 3D model itself and the scene. To remedy the possible effects of the noise, an ideal scene and model had to be sought after.
 An ideal scene incorporates the following [[reconstruction.bucchiRecommendationsImprovingPhoto2020a]]
 	1. Even and Diffuse Lighting
 	2. A contrasting background 
@@ -18,7 +18,4 @@ An ideal model should have fairly simple shapes with the following characteristi
 	1. Rough Material to prevent specular surfaces
 	2. Textures that are not narrowly tiled
 	3. 
-Initially the UtahTeapot was considered then then the
-
-
-Image overlap is the main factor that should be considered in place of 
+Initially, the UtahTeapot and afterwards a different model with a random shape was used. The latter was referred to as RandomShape2 and had conspicious geomtery as well as a concrete-like texture that provided.

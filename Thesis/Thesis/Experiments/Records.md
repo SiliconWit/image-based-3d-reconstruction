@@ -22,6 +22,8 @@ Mean distance = 0.0071312 / std deviation = 0.0129163
 Scalar field RMS = 0.0147541
 Gauss: Chi2 Distance = 235383
 ![[Pasted image 20230813205224.png]]
+
+**NB:** The above experiment's results appear to be perfect because the ground truth was scaled down to a size almost similar to the Recons
 ## Experiment 2 - UtahTeapotCircular_40_0.5_2
 - Number of Photos -> 40;
 	- Height Multiplier -> 0.5

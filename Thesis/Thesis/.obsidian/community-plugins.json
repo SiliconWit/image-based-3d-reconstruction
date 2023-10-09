@@ -1,5 +1,6 @@
 [
   "obsidian-languagetool-plugin",
   "obsidian-zotero-desktop-connector",
-  "highlightr-plugin"
+  "highlightr-plugin",
+  "obsidian-html-tags-autocomplete"
 ]

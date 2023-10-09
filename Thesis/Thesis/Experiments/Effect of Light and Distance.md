@@ -85,3 +85,8 @@ Alignment: [04:10:53] [Register] Final RMS*: 0.26524 (computed on 50000 points)
 ### RandowmShape2CirularLamp_105_1.125_1
 ![[Pasted image 20230907030001.png]]
 
+# Conclusion
+- Attaching lights to the camera can be harmful. This is probably due to the overexposure of surfaces.
+- Too many images may deter the quality of reconstruction, and thus quantity does not always co-relate positively to quality of the reconstruction.
+- Spiral patterns perform better than circular patterns in longer distances.
+- 

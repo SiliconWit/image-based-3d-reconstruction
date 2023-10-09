@@ -25,5 +25,23 @@
       ],
       "key": "C"
     }
+  ],
+  "obsidian-html-tags-autocomplete:html_autocomplete_tags-skip_over_tag_backward": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "ArrowLeft"
+    }
+  ],
+  "obsidian-html-tags-autocomplete:html_autocomplete_tags-skip_over_tag_forward": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "ArrowRight"
+    }
   ]
 }
