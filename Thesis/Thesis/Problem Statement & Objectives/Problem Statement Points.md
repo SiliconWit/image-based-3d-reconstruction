@@ -18,3 +18,8 @@ High resolution images are not always appropriate depending on the application.
 - Lighting may be uniform or may rotate with the objects
 - The camera is stationary.
 - This method may not account for occlusions well enough as well as intricate shapes of the target object.
+
+
+## Rationale
+
+To improve the automation of 3-D scanning, it is necessary to plan the path for the robot, making it maximize the information gained about the objects or scenes.[[fanPathPlanningAutonomous2023]]

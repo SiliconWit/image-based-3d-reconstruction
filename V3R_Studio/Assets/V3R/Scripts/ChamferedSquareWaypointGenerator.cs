@@ -32,6 +32,7 @@ namespace ThaIntersect.V3R
             
             for (int i = 0; i < edges.Count; i++)
             {
+                print(edges[i].Item1+" "+edges[i].Item2);
                 var edge_vec = edges[i].Item2 - edges[i].Item1;
                 var midpoint = (edges[i].Item1 + edges[i].Item2) / 2;
                 var target_vec = (target.transform.position - midpoint);
@@ -52,7 +53,7 @@ namespace ThaIntersect.V3R
             }
             float y = target.position.y;
             var y0 = y -  (boundingBox.y * mult_h)/2;
-            print( levelTransforms.Count );
+            
             for (int j = 0; j < elevations; j++)
             {
                 foreach (var levelPose in levelTransforms)
@@ -67,7 +68,7 @@ namespace ThaIntersect.V3R
                                 levelPose.position.z
                             )
                         }
-                        );
+                    );
                 }
             }
             // foreach (var edge in edges)
@@ -215,6 +216,7 @@ namespace ThaIntersect.V3R
                     scaled_edges[(i+1)%scaled_edges.Count].Item1
                 ));                
             }
+            
             
             return edges;   
         }

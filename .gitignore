@@ -6,4 +6,6 @@ PathTracingDemo
 V3R_PLayground
 *.blend?
 Thesis/References
+PythonPlayground/Models/*
+3DModels
 

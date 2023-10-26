@@ -71,7 +71,7 @@ namespace ThaIntersect.V3R{
 
         void Calc_HR_Ratio()
         {
-            r = Mathf.Sqrt(
+            var _r = Mathf.Sqrt(
                             (boundingBox.x * boundingBox.x) + 
                             (boundingBox.z * boundingBox.z)
                         )/2.0f;
@@ -82,9 +82,10 @@ namespace ThaIntersect.V3R{
 
             float fovL = h_2 / Mathf.Tan(Mathf.Deg2Rad * vfov)/2;
 
-            hr_ratio = fovL/r;
+            hr_ratio = fovL/_r;
         }
 
+        // Calculate Radius based on the horizontal field of view
         public void Calc_R(){
             var hfov = cameraUnit.Get_hFov();
             var opp = Mathf.Max( boundingBox.x, boundingBox.z )/2f;
@@ -96,7 +97,6 @@ namespace ThaIntersect.V3R{
             var vfov = cameraUnit.Get_vFov();
             var opp = r * mult_r * Mathf.Tan( (Mathf.Deg2Rad * vfov)/2f );
             h = opp * 2;
-
         }
 
 
