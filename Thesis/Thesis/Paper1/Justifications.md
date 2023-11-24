@@ -1,0 +1,3 @@
+- Most of the research done do not consider a monocular RGB cameras but rather make use of RGBD, cameras.
+- The proposed solution is online.
+- 

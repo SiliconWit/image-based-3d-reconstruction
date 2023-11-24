@@ -1,3 +1,5 @@
 - SFM - SfM is the process of reconstructing 3D structure from its projections into a series of images taken from different viewpoints. [[schonbergerStructurefromMotionRevisited2016]]
 - Incremental sFM adds an iterative component to sfM.
 - Bundle Adjust
+- View Planning Problem - problem of minimising the views required to cover an object for 3D reconstruction. Kaba, M.D., Uzunbas, M.G., Lim, S.N.: A reinforcement learning approach to the view planning problem. In: CVPR. pp. 5094–5102 (2017)
+- Active Vision ⇾ deals with actively positioning sensors or cameras to improve the quality of perception. Chen, S., Li, Y., Kwok, N.M.: Active vision in robotic systems: A survey of recent developments. International Journal of Robotics Research 30(11), 1343–1377 (2011)

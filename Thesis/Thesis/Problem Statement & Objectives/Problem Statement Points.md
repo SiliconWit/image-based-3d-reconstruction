@@ -23,3 +23,8 @@ High resolution images are not always appropriate depending on the application.
 ## Rationale
 
 To improve the automation of 3-D scanning, it is necessary to plan the path for the robot, making it maximize the information gained about the objects or scenes.[[fanPathPlanningAutonomous2023]]
+
+The task of collecting extensive sensor information about an environment efficiently requires to plan paths for the robot that maximize the information gain about the unknown environment. This problem is also known as informative path planning (IPP).[[naazareOnlineNextBestViewPlanner2022]]
+
+- SfM relies heavily on the viewpoints provided. Lack of data creates holes in the 3D reconstruction. More images may remedy this but may also be computationally expensive.Heinly, J., Schonberger, J.L., Dunn, E., Frahm, J.M.: Reconstructing the world* in six days*(as captured by the yahoo 100 million image dataset). In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. pp. 3287–3295 (2015)
+- 
