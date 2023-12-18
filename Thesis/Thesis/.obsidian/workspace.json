@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Methodology/Open3D.md",
+                "file": "Concepts/Sobel vs Canny.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "478939bab8b8b20e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Scholar Seminar/7th September 2023.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "canny",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +77,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Methodology/Open3D.md",
+                "file": "Concepts/Sobel vs Canny.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Methodology/Open3D.md",
+                "file": "Concepts/Sobel vs Canny.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Methodology/Open3D.md"
+                "file": "Concepts/Sobel vs Canny.md"
               }
             }
           },
@@ -158,46 +171,47 @@
   },
   "active": "751b3c23b0a95904",
   "lastOpenFiles": [
-    "Concepts/Estimation of Normals.md",
-    "Concepts/Canny Edge Detector.md",
-    "2023-11-24.md",
+    "Scholar Seminar/7th September 2023.md",
+    "Methodology/Harmonizing Detected Blobs.md",
+    "Problem Statement & Objectives/Problem Statement Points.md",
+    "Concepts/Prinicipal Component Analysis Overview.md",
+    "Paper1/Abstract.md",
+    "Methodology/Getting Secondary Pose and Calculating Orientation.md",
+    "Methodology/Enhancing Depth Maps from Sobel.md",
+    "Concepts/Sobel vs Canny.md",
+    "Concepts/Scharr vs Sobel.md",
+    "Concepts/Blob Detections.md",
+    "Concepts/Boundary Detection.md",
+    "Concepts/Edge Detection.md",
+    "Literature Review/Literature Review for THREE-DIMENSIONAL PATH PLANNING OF UAVS IMAGING FOR COMPLETE PHOTOGRAMMETRIC RECONSTRUCTION.md",
+    "Literature Review/Literature Review for Network Design for UGV Based.md",
+    "Methodology/Photogrammetric Constraints.md",
+    "Background/Glossary.md",
+    "Experiments/Evaluation Criteria.md",
+    "Problem Statement & Objectives/Problem Statement.md",
+    "Problem Statement & Objectives/Objectives.md",
+    "Methodology/Research Design and Methodology.md",
+    "Methodology/Pho.md",
+    "Literature Review/Literature Points.md",
+    "Methodology/Objective Function.md",
+    "Concepts/Feature Detectors.md",
+    "Background/General Notes.md",
+    "Concepts/Sampling Based Methods.md",
+    "Methodology/attachments/Pasted image 20231204124309.png",
+    "Methodology/attachments/Pasted image 20231204120828.png",
+    "Methodology/attachments/Screenshot from 2023-12-04 12-07-13 1.png",
+    "Methodology/attachments/Screenshot from 2023-12-04 12-07-13.png",
+    "Methodology/attachments/Pasted image 20231204120203.png",
+    "Methodology/attachments/Pasted image 20231204115220.png",
+    "Methodology/attachments/Pasted image 20231204115046.png",
+    "Methodology/attachments/Pasted image 20231204114751.png",
+    "Methodology/attachments/Pasted image 20231204114606.png",
+    "Methodology/attachments/Pasted image 20231204114443.png",
+    "Methodology/attachments",
     "Untitled 4.canvas",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
-    "Concepts/Edge Detection.md",
-    "Literature Review/Overview of the Literature Review.md",
-    "Concepts/Voxels.md",
-    "Concepts/attachments/Pasted image 20231121161955.png",
-    "Concepts/Informative Path Planning.md",
-    "Concepts/attachments/Pasted image 20231120162953.png",
-    "Concepts/attachments/Pasted image 20231120162403.png",
-    "Concepts/attachments/Pasted image 20231120162310.png",
-    "Concepts/attachments/Pasted image 20231120162037.png",
-    "Concepts/attachments/Pasted image 20231120160203.png",
-    "Concepts/attachments/Pasted image 20231120155524.png",
-    "Concepts/attachments/Pasted image 20231120154843.png",
-    "Concepts/attachments/Pasted image 20231120154451.png",
-    "Paper1/Justifications.md",
-    "Concepts/Sampling Based Methods.md",
-    "Concepts/attachments/Pasted image 20231119133457.png",
-    "Paper1/Overview of the First Paper.md",
-    "Methodology/Open3D.md",
-    "Concepts/Normals Estimation.md",
-    "Concepts/Boundary Detection.md",
-    "Concepts/Feature Detectors.md",
-    "Background/Background Overview.md",
-    "Background/Glossary.md",
-    "Background/Applications of Photogrammetry.md",
-    "Evaluation/Experiments basis.md",
-    "Evaluation/Cloud Compare.md",
-    "Evaluation/Chi Squared.md",
-    "Problem Statement & Objectives/Problem Statement Points.md",
-    "Problem Statement & Objectives/Rationale, Scope and Assumptions.md",
-    "Problem Statement & Objectives/Research Questions and Hypothesis.md",
     "Untitled.canvas",
-    "Papers/naazareOnlineNextBestViewPlanner2022.md",
-    "Problem Statement & Objectives/Problem Statement.md",
-    "RobotIntegration/Justifications.md",
     "Paper2",
     "Paper1",
     "RobotIntegration",
@@ -209,7 +223,6 @@
     "Questions.canvas",
     "Experiments/Experiment2-1.png.crdownload",
     "Experiments/randomobject2_exp1.png.crdownload",
-    "Experiments/randomobject2_exp1.svg.crdownload",
     "Methodology/Untitled.canvas"
   ]
 }

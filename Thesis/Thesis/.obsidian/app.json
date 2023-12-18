@@ -1,5 +1,17 @@
 {
-  "attachmentFolderPath": "./attachments",
+  "attachmentFolderPath": "Methodology/attachments",
   "trashOption": "none",
-  "promptDelete": false
+  "promptDelete": false,
+  "spellcheckDictionary": [
+    "SfM",
+    "Dedan",
+    "Kimathi",
+    "]]",
+    "Webots",
+    "VRep",
+    "Coppeliasim",
+    "IPP ",
+    "CoppeliaSim",
+    "\n\n"
+  ]
 }

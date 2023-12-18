@@ -1,0 +1,3 @@
+1. **Diminishing Returns during Image Acquisition** 
+	A function is submodular if, intuitively, it has a diminishing returns property. In this case, the objective function related to information is submodular, as per the reference to <mark style="background: #ADCCFFA6;">Krause and Golovin (2014)</mark>. This means that each additional viewpoint adds less and less new information compared to the previous ones. The first few images captured add a lot of new information, but as more images are captured, each new image contributes less additional information because much of the object has already been imaged.
+2. 

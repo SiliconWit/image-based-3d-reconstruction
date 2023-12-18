@@ -1,4 +1,4 @@
-#tutorial #First-principles #computervision 
+#tutorial #First-principles #computervision #blob-detection
 
 In the video [Overview | SIFT Detector](https://www.youtube.com/@firstprinciplesofcomputerv3258)  the presenter talks of thresholding, what is that?
 
