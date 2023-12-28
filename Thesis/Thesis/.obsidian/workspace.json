@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concepts/Sobel vs Canny.md",
+                "file": "Concepts/Akaza Liop vs Mldb.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Concepts/Sobel vs Canny.md",
+                "file": "Concepts/Akaza Liop vs Mldb.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Concepts/Sobel vs Canny.md",
+                "file": "Concepts/Akaza Liop vs Mldb.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Concepts/Sobel vs Canny.md"
+                "file": "Concepts/Akaza Liop vs Mldb.md"
               }
             }
           },
@@ -171,6 +170,9 @@
   },
   "active": "751b3c23b0a95904",
   "lastOpenFiles": [
+    "2023-12-28.md",
+    "Concepts/Akaza Liop vs Mldb.md",
+    "Concepts/Sobel vs Canny.md",
     "Scholar Seminar/7th September 2023.md",
     "Methodology/Harmonizing Detected Blobs.md",
     "Problem Statement & Objectives/Problem Statement Points.md",
@@ -178,7 +180,6 @@
     "Paper1/Abstract.md",
     "Methodology/Getting Secondary Pose and Calculating Orientation.md",
     "Methodology/Enhancing Depth Maps from Sobel.md",
-    "Concepts/Sobel vs Canny.md",
     "Concepts/Scharr vs Sobel.md",
     "Concepts/Blob Detections.md",
     "Concepts/Boundary Detection.md",
@@ -195,8 +196,6 @@
     "Literature Review/Literature Points.md",
     "Methodology/Objective Function.md",
     "Concepts/Feature Detectors.md",
-    "Background/General Notes.md",
-    "Concepts/Sampling Based Methods.md",
     "Methodology/attachments/Pasted image 20231204124309.png",
     "Methodology/attachments/Pasted image 20231204120828.png",
     "Methodology/attachments/Screenshot from 2023-12-04 12-07-13 1.png",

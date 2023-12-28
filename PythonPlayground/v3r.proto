@@ -1,0 +1,43 @@
+// Python: python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. --pyi_out=. v3r.proto 
+// C#: protoc --csharp_out=$HOME/DEVT/Unity/V3R_Lite/Assets/ --plugin=protoc-gen-grpc=$HOME/.local/bin/grpc_csharp_plugin --grpc_out=$HOME/DEVT/Unity/V3R_Lite/Assets/ v3r.proto 
+syntax = "proto3";
+
+package V3R;
+
+service V3Rrelay{
+    // Send 3 images with camera extrinics(position only)
+    rpc Calibration(stream CalibrationInput) returns (DoneResponse);
+    
+    // Find depth value for image 
+    rpc FindDepths(CalibrationInput) returns ( DepthData );
+
+}
+
+message Nil{}
+
+message DepthData{
+    float min = 1;
+    float max = 2;
+    float median = 3;
+    float mean = 4;
+    float mode = 5;
+}
+
+message DoneResponse{
+    bool done = 1;
+}
+
+message CalibrationInput{
+    Vec3 position = 1;
+    ImgByteArr image = 2;
+}
+
+message ImgByteArr {
+    bytes byteArr = 1;
+}
+
+message Vec3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
