@@ -5,22 +5,42 @@ syntax = "proto3";
 package V3R;
 
 service V3Rrelay{
-    // Send 3 images with camera extrinics(position only)
-    rpc Calibration(stream CalibrationInput) returns (DoneResponse);
-    
-    // Find depth value for image 
-    rpc FindDepths(CalibrationInput) returns ( DepthData );
+    // Find depth values from an image 
+    rpc FindDepths(ImgByteArr) returns ( DepthData );
+
+    // Calibrates the Depth Map
+    rpc CalibrateDepth(CalibrationInput) returns ( DepthData );
+
+    // Run the NBV algorithm to get new Poses
+    rpc DerivePoses(NBVInput) returns ( CamPoses );
 
 }
 
 message Nil{}
+
+message ImgByteArr {
+    bytes byteArr = 1;
+}
+
+message Vec3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Quat {
+    float w = 1;
+    float x = 2;
+    float y = 3;
+    float z = 4;
+}
 
 message DepthData{
     float min = 1;
     float max = 2;
     float median = 3;
     float mean = 4;
-    float mode = 5;
+    float center = 5;
 }
 
 message DoneResponse{
@@ -32,12 +52,19 @@ message CalibrationInput{
     ImgByteArr image = 2;
 }
 
-message ImgByteArr {
-    bytes byteArr = 1;
+// Input for the NBV Algorithm
+message NBVInput{
+    CamPose refPose = 1;
+    ImgByteArr image = 2;
 }
 
-message Vec3 {
-    float x = 1;
-    float y = 2;
-    float z = 3;
+// Represents a Unity Transform
+message CamPose{
+    Vec3 location = 1;
+    Quat orientation = 2;
+}
+
+// A list of Unity Transforms
+message CamPoses{
+    repeated CamPose Poses = 1;
 }

@@ -14,30 +14,42 @@ class V3RrelayStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Calibration = channel.stream_unary(
-                '/V3R.V3Rrelay/Calibration',
-                request_serializer=v3r__pb2.CalibrationInput.SerializeToString,
-                response_deserializer=v3r__pb2.DoneResponse.FromString,
-                )
         self.FindDepths = channel.unary_unary(
                 '/V3R.V3Rrelay/FindDepths',
+                request_serializer=v3r__pb2.ImgByteArr.SerializeToString,
+                response_deserializer=v3r__pb2.DepthData.FromString,
+                )
+        self.CalibrateDepth = channel.unary_unary(
+                '/V3R.V3Rrelay/CalibrateDepth',
                 request_serializer=v3r__pb2.CalibrationInput.SerializeToString,
                 response_deserializer=v3r__pb2.DepthData.FromString,
+                )
+        self.DerivePoses = channel.unary_unary(
+                '/V3R.V3Rrelay/DerivePoses',
+                request_serializer=v3r__pb2.NBVInput.SerializeToString,
+                response_deserializer=v3r__pb2.CamPoses.FromString,
                 )
 
 
 class V3RrelayServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Calibration(self, request_iterator, context):
-        """Send 3 images with camera extrinics(position only)
+    def FindDepths(self, request, context):
+        """Find depth values from an image 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def FindDepths(self, request, context):
-        """Find depth value for image 
+    def CalibrateDepth(self, request, context):
+        """Calibrates the Depth Map
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DerivePoses(self, request, context):
+        """Run the NBV algorithm to get new Poses
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -46,15 +58,20 @@ class V3RrelayServicer(object):
 
 def add_V3RrelayServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Calibration': grpc.stream_unary_rpc_method_handler(
-                    servicer.Calibration,
-                    request_deserializer=v3r__pb2.CalibrationInput.FromString,
-                    response_serializer=v3r__pb2.DoneResponse.SerializeToString,
-            ),
             'FindDepths': grpc.unary_unary_rpc_method_handler(
                     servicer.FindDepths,
+                    request_deserializer=v3r__pb2.ImgByteArr.FromString,
+                    response_serializer=v3r__pb2.DepthData.SerializeToString,
+            ),
+            'CalibrateDepth': grpc.unary_unary_rpc_method_handler(
+                    servicer.CalibrateDepth,
                     request_deserializer=v3r__pb2.CalibrationInput.FromString,
                     response_serializer=v3r__pb2.DepthData.SerializeToString,
+            ),
+            'DerivePoses': grpc.unary_unary_rpc_method_handler(
+                    servicer.DerivePoses,
+                    request_deserializer=v3r__pb2.NBVInput.FromString,
+                    response_serializer=v3r__pb2.CamPoses.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -65,23 +82,6 @@ def add_V3RrelayServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class V3Rrelay(object):
     """Missing associated documentation comment in .proto file."""
-
-    @staticmethod
-    def Calibration(request_iterator,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/V3R.V3Rrelay/Calibration',
-            v3r__pb2.CalibrationInput.SerializeToString,
-            v3r__pb2.DoneResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def FindDepths(request,
@@ -95,7 +95,41 @@ class V3Rrelay(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/FindDepths',
+            v3r__pb2.ImgByteArr.SerializeToString,
+            v3r__pb2.DepthData.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CalibrateDepth(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/CalibrateDepth',
             v3r__pb2.CalibrationInput.SerializeToString,
             v3r__pb2.DepthData.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DerivePoses(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/DerivePoses',
+            v3r__pb2.NBVInput.SerializeToString,
+            v3r__pb2.CamPoses.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
