@@ -7,12 +7,12 @@ import numpy as np
 from PIL import Image
 import io
 import typing
-from common import compute_depth
 from zoedepth.models.builder import build_model
 from zoedepth.utils.config import get_config
 from NBV_Poser import NBVPoser
 import logging
 
+logging.basicConfig(level=logging.INFO)
 
 depth_maps = list()
 
@@ -22,10 +22,13 @@ class V3RrelayServicer(v3r_pb2_grpc.V3RrelayServicer):
         self.gt_deltas = list()
         self.positions = list()
         self.depth_maps = list()
-
-        if 'zoe' not in globals():
-            conf = get_config("zoedepth", "infer")
-            self.zoe = build_model(conf)
+        self.zoe = None
+        self.midas = True
+        if not self.midas:
+            if 'zoe' not in globals():
+                conf = get_config("zoedepth", "infer")
+                self.zoe = build_model(conf)
+        
 
     def Image_from_Bytes(self, byteArr: bytearray):
         numpy_array = np.frombuffer(byteArr, dtype=np.uint8)
@@ -69,6 +72,7 @@ class V3RrelayServicer(v3r_pb2_grpc.V3RrelayServicer):
     def DerivePoses(self, request:v3r_pb2.NBVInput, context):
         _image = self.Image_from_Bytes(request.image.byteArr)
         _pose = request.refPose
+        
 
         nbv_poser = NBVPoser( _image, _pose, self.zoe )
         if(nbv_poser == None):
