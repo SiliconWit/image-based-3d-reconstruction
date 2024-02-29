@@ -1,0 +1,304 @@
+{
+    "version": [
+        "1",
+        "2",
+        "6"
+    ],
+    "featuresFolders": [
+        "..\/..\/FeatureExtraction\/64507f3190c2c01049d55d641a4b7c4a76a74dfa"
+    ],
+    "matchesFolders": [
+        "..\/..\/FeatureMatching\/9e350c12a61c6543bcb2f4aa666982826cff7310"
+    ],
+    "views": [
+        {
+            "viewId": "220273806",
+            "poseId": "220273806",
+            "frameId": "1",
+            "intrinsicId": "3917018695",
+            "resectionId": "0",
+            "path": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos\/SB_Quad_1.jpg",
+            "width": "1024",
+            "height": "768",
+            "metadata": {
+                "AliceVision:SensorWidth": "6.287000",
+                "Exif:DateTimeDigitized": "2024:02:19 12:43:59",
+                "Exif:DateTimeOriginal": "2024:02:19 12:43:59",
+                "Exif:Flash": "0",
+                "Exif:FocalLength": "6",
+                "Exif:FocalLengthIn35mmFilm": "33",
+                "Exif:PhotographicSensitivity": "1500",
+                "Exif:PixelXDimension": "0",
+                "Exif:PixelYDimension": "0",
+                "ExposureTime": "0.00401606",
+                "FNumber": "1.79",
+                "Make": "RaspberryPi",
+                "Model": "RP_imx477",
+                "jpeg:subsampling": "4:2:0",
+                "oiio:ColorSpace": "sRGB"
+            }
+        },
+        {
+            "viewId": "768217550",
+            "poseId": "768217550",
+            "frameId": "2",
+            "intrinsicId": "3917018695",
+            "resectionId": "3",
+            "path": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos\/SB_Quad_2.jpg",
+            "width": "1024",
+            "height": "768",
+            "metadata": {
+                "AliceVision:SensorWidth": "6.287000",
+                "Exif:DateTimeDigitized": "2024:02:19 12:44:02",
+                "Exif:DateTimeOriginal": "2024:02:19 12:44:02",
+                "Exif:Flash": "0",
+                "Exif:FocalLength": "6",
+                "Exif:FocalLengthIn35mmFilm": "33",
+                "Exif:PhotographicSensitivity": "1500",
+                "Exif:PixelXDimension": "0",
+                "Exif:PixelYDimension": "0",
+                "ExposureTime": "0.00401606",
+                "FNumber": "1.79",
+                "Make": "RaspberryPi",
+                "Model": "RP_imx477",
+                "jpeg:subsampling": "4:2:0",
+                "oiio:ColorSpace": "sRGB"
+            }
+        },
+        {
+            "viewId": "1203462853",
+            "poseId": "1203462853",
+            "frameId": "4",
+            "intrinsicId": "3917018695",
+            "resectionId": "0",
+            "path": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos\/SB_Quad_4.jpg",
+            "width": "1024",
+            "height": "768",
+            "metadata": {
+                "AliceVision:SensorWidth": "6.287000",
+                "Exif:DateTimeDigitized": "2024:02:19 12:44:09",
+                "Exif:DateTimeOriginal": "2024:02:19 12:44:09",
+                "Exif:Flash": "0",
+                "Exif:FocalLength": "6",
+                "Exif:FocalLengthIn35mmFilm": "33",
+                "Exif:PhotographicSensitivity": "1500",
+                "Exif:PixelXDimension": "0",
+                "Exif:PixelYDimension": "0",
+                "ExposureTime": "0.00401606",
+                "FNumber": "1.79",
+                "Make": "RaspberryPi",
+                "Model": "RP_imx477",
+                "jpeg:subsampling": "4:2:0",
+                "oiio:ColorSpace": "sRGB"
+            }
+        },
+        {
+            "viewId": "1424836596",
+            "poseId": "1424836596",
+            "frameId": "3",
+            "intrinsicId": "3917018695",
+            "resectionId": "2",
+            "path": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos\/SB_Quad_3.jpg",
+            "width": "1024",
+            "height": "768",
+            "metadata": {
+                "AliceVision:SensorWidth": "6.287000",
+                "Exif:DateTimeDigitized": "2024:02:19 12:44:06",
+                "Exif:DateTimeOriginal": "2024:02:19 12:44:06",
+                "Exif:Flash": "0",
+                "Exif:FocalLength": "6",
+                "Exif:FocalLengthIn35mmFilm": "33",
+                "Exif:PhotographicSensitivity": "1500",
+                "Exif:PixelXDimension": "0",
+                "Exif:PixelYDimension": "0",
+                "ExposureTime": "0.00401606",
+                "FNumber": "1.79",
+                "Make": "RaspberryPi",
+                "Model": "RP_imx477",
+                "jpeg:subsampling": "4:2:0",
+                "oiio:ColorSpace": "sRGB"
+            }
+        },
+        {
+            "viewId": "1642103267",
+            "poseId": "1642103267",
+            "frameId": "5",
+            "intrinsicId": "3917018695",
+            "resectionId": "1",
+            "path": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos\/SB_Quad_5.jpg",
+            "width": "1024",
+            "height": "768",
+            "metadata": {
+                "AliceVision:SensorWidth": "6.287000",
+                "Exif:DateTimeDigitized": "2024:02:19 12:44:11",
+                "Exif:DateTimeOriginal": "2024:02:19 12:44:11",
+                "Exif:Flash": "0",
+                "Exif:FocalLength": "6",
+                "Exif:FocalLengthIn35mmFilm": "33",
+                "Exif:PhotographicSensitivity": "1500",
+                "Exif:PixelXDimension": "0",
+                "Exif:PixelYDimension": "0",
+                "ExposureTime": "0.00401606",
+                "FNumber": "1.79",
+                "Make": "RaspberryPi",
+                "Model": "RP_imx477",
+                "jpeg:subsampling": "4:2:0",
+                "oiio:ColorSpace": "sRGB"
+            }
+        }
+    ],
+    "intrinsics": [
+        {
+            "intrinsicId": "3917018695",
+            "width": "1024",
+            "height": "768",
+            "sensorWidth": "6.2869999999999999",
+            "sensorHeight": "4.7152500000000002",
+            "serialNumber": "\/media\/kibzyzii\/Local Disk\/Ps\/image-based-3d-reconstruction\/PythonPlayground\/Clouds\/StanfordBunny_vp2\/photos_RaspberryPi_RP_imx477",
+            "type": "radial3",
+            "initializationMode": "estimated",
+            "initialFocalLength": "6",
+            "focalLength": "5.9730886267690622",
+            "pixelRatio": "1",
+            "pixelRatioLocked": "true",
+            "principalPoint": [
+                "-2.6268552248965342",
+                "-14.736989390034799"
+            ],
+            "distortionInitializationMode": "none",
+            "distortionParams": [
+                "0.0094799169158988998",
+                "0.0092551285752793637",
+                "-0.076200720712708475"
+            ],
+            "undistortionOffset": [
+                "0",
+                "0"
+            ],
+            "undistortionParams": "",
+            "locked": "false"
+        }
+    ],
+    "poses": [
+        {
+            "poseId": "220273806",
+            "pose": {
+                "transform": {
+                    "rotation": [
+                        "0.9999846608296149",
+                        "-0.0047347525831402029",
+                        "-0.0028740604476128404",
+                        "0.0046953298824211533",
+                        "0.99989687346392442",
+                        "-0.013571894280597864",
+                        "0.0029380236172175545",
+                        "0.013558191437095492",
+                        "0.99990376710070439"
+                    ],
+                    "center": [
+                        "-1.0602557363113096",
+                        "-1.2729758959423203",
+                        "-0.25581972692451893"
+                    ]
+                },
+                "locked": "0"
+            }
+        },
+        {
+            "poseId": "768217550",
+            "pose": {
+                "transform": {
+                    "rotation": [
+                        "0.96526621272451618",
+                        "-0.075426923043818525",
+                        "-0.2501437943515909",
+                        "0.0041264716114075648",
+                        "0.96170290097957878",
+                        "-0.27406295349700749",
+                        "0.26123573799254457",
+                        "0.26351149790398998",
+                        "0.9286105640514144"
+                    ],
+                    "center": [
+                        "0.069955690025621659",
+                        "-0.132130879643029",
+                        "-0.28696434342272703"
+                    ]
+                },
+                "locked": "0"
+            }
+        },
+        {
+            "poseId": "1203462853",
+            "pose": {
+                "transform": {
+                    "rotation": [
+                        "0.86410825925936019",
+                        "-0.012195456056496835",
+                        "-0.50315821282309647",
+                        "0.0046953226879717248",
+                        "0.99985821988751833",
+                        "-0.016170778219338773",
+                        "0.50328408501025956",
+                        "0.011610812845674412",
+                        "0.86404300749467822"
+                    ],
+                    "center": [
+                        "1.0472261146093675",
+                        "-1.2619810506019953",
+                        "0.31252366741225124"
+                    ]
+                },
+                "locked": "0"
+            }
+        },
+        {
+            "poseId": "1424836596",
+            "pose": {
+                "transform": {
+                    "rotation": [
+                        "0.96525343066528368",
+                        "0.059119451564568361",
+                        "-0.25454018353809116",
+                        "0.0052816486527696221",
+                        "0.96945934041038173",
+                        "0.24519521096174907",
+                        "0.26126216483909248",
+                        "-0.23801991038098594",
+                        "0.93546170604991541"
+                    ],
+                    "center": [
+                        "-0.087876241122753385",
+                        "-2.3181054661865703",
+                        "0.34107552855444856"
+                    ]
+                },
+                "locked": "0"
+            }
+        },
+        {
+            "poseId": "1642103267",
+            "pose": {
+                "transform": {
+                    "rotation": [
+                        "0.9650372255040971",
+                        "-0.008299024563172731",
+                        "-0.26198144892845765",
+                        "0.0046780879108022175",
+                        "0.99988476525082726",
+                        "-0.014442012075775636",
+                        "0.26207111417486095",
+                        "0.012711507015216521",
+                        "0.96496484324795428"
+                    ],
+                    "center": [
+                        "0.030950172799073965",
+                        "-1.2694335262260219",
+                        "-0.11081512561945353"
+                    ]
+                },
+                "locked": "0"
+            }
+        }
+    ]
+}
