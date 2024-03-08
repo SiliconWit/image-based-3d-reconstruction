@@ -19,15 +19,20 @@ class V3RrelayStub(object):
                 request_serializer=v3r__pb2.ImgByteArr.SerializeToString,
                 response_deserializer=v3r__pb2.DepthData.FromString,
                 )
-        self.CalibrateDepth = channel.unary_unary(
-                '/V3R.V3Rrelay/CalibrateDepth',
-                request_serializer=v3r__pb2.CalibrationInput.SerializeToString,
-                response_deserializer=v3r__pb2.DepthData.FromString,
-                )
         self.DerivePoses = channel.unary_unary(
                 '/V3R.V3Rrelay/DerivePoses',
                 request_serializer=v3r__pb2.NBVInput.SerializeToString,
                 response_deserializer=v3r__pb2.CamPoses.FromString,
+                )
+        self.CalculateROIs = channel.unary_unary(
+                '/V3R.V3Rrelay/CalculateROIs',
+                request_serializer=v3r__pb2.ImgByteArr.SerializeToString,
+                response_deserializer=v3r__pb2.CamPoses.FromString,
+                )
+        self.Navigate = channel.stream_stream(
+                '/V3R.V3Rrelay/Navigate',
+                request_serializer=v3r__pb2.ImgByteArr.SerializeToString,
+                response_deserializer=v3r__pb2.CamPose.FromString,
                 )
 
 
@@ -41,15 +46,22 @@ class V3RrelayServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CalibrateDepth(self, request, context):
-        """Calibrates the Depth Map
+    def DerivePoses(self, request, context):
+        """Run the NBV algorithm to get new Poses
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DerivePoses(self, request, context):
-        """Run the NBV algorithm to get new Poses
+    def CalculateROIs(self, request, context):
+        """Compute Regions of Interest and Descriptors
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Navigate(self, request_iterator, context):
+        """Provide Navigation Commands based on GanmeView Frames
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -63,15 +75,20 @@ def add_V3RrelayServicer_to_server(servicer, server):
                     request_deserializer=v3r__pb2.ImgByteArr.FromString,
                     response_serializer=v3r__pb2.DepthData.SerializeToString,
             ),
-            'CalibrateDepth': grpc.unary_unary_rpc_method_handler(
-                    servicer.CalibrateDepth,
-                    request_deserializer=v3r__pb2.CalibrationInput.FromString,
-                    response_serializer=v3r__pb2.DepthData.SerializeToString,
-            ),
             'DerivePoses': grpc.unary_unary_rpc_method_handler(
                     servicer.DerivePoses,
                     request_deserializer=v3r__pb2.NBVInput.FromString,
                     response_serializer=v3r__pb2.CamPoses.SerializeToString,
+            ),
+            'CalculateROIs': grpc.unary_unary_rpc_method_handler(
+                    servicer.CalculateROIs,
+                    request_deserializer=v3r__pb2.ImgByteArr.FromString,
+                    response_serializer=v3r__pb2.CamPoses.SerializeToString,
+            ),
+            'Navigate': grpc.stream_stream_rpc_method_handler(
+                    servicer.Navigate,
+                    request_deserializer=v3r__pb2.ImgByteArr.FromString,
+                    response_serializer=v3r__pb2.CamPose.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -101,23 +118,6 @@ class V3Rrelay(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CalibrateDepth(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/CalibrateDepth',
-            v3r__pb2.CalibrationInput.SerializeToString,
-            v3r__pb2.DepthData.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def DerivePoses(request,
             target,
             options=(),
@@ -131,5 +131,39 @@ class V3Rrelay(object):
         return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/DerivePoses',
             v3r__pb2.NBVInput.SerializeToString,
             v3r__pb2.CamPoses.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CalculateROIs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/V3R.V3Rrelay/CalculateROIs',
+            v3r__pb2.ImgByteArr.SerializeToString,
+            v3r__pb2.CamPoses.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Navigate(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(request_iterator, target, '/V3R.V3Rrelay/Navigate',
+            v3r__pb2.ImgByteArr.SerializeToString,
+            v3r__pb2.CamPose.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

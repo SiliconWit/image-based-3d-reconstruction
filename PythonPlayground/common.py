@@ -17,6 +17,8 @@ from skimage.exposure import adjust_log
 
 from scipy.ndimage import binary_erosion
 
+import open3d as o3d
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -104,6 +106,12 @@ def display_image(image):
     cv2.waitKey(0)
     cv2.destroyAllWindows()        
 
+def filter_blobs(blobs, mask):
+    
+    filtered_blobs = [blob for blob in blobs if mask[ int(blob[0]), int(blob[1]) ] > 0]
+    
+    return filtered_blobs
+
 def create_mask(image, post_process=True):
     '''
         Create a Mask out of an image
@@ -135,7 +143,25 @@ def grayscale_to_rgb(grayscale_image):
     rgb_image = np.stack((grayscale_image,) * 3, axis=-1)
     return rgb_image
 
+def angle_difference(v1, v2):
+    '''
+        Returns: angle_degrees and angle_radians
+    '''
+    dot_product = np.dot(v1, v2)
 
+    magnitude_v1 = np.linalg.norm(v1)
+    magnitude_v2 = np.linalg.norm(v2)
+
+    # Calculate the cosine of the angle between the vectors
+    cosine_theta = dot_product / (magnitude_v1 * magnitude_v2)
+
+    # Use arccosine to get the angle in radians
+    angle_radians = np.arccos(cosine_theta)
+
+    # Convert the angle to degrees
+    angle_degrees = np.degrees(angle_radians)
+
+    return angle_degrees, angle_radians
 
 def process(image, model, model_type, device, target_size, optimize):
     """
@@ -296,6 +322,41 @@ def shrink_mask(mask, pixels_to_shrink):
     
     return shrunk_mask
 
+def create_point_cloud(extractions, intrinsics):
+    img_rgb, img_dep = extractions
+    
+    # Scaling factor for the depth image
+    _scale = 1000
+    
+    color_raw_m = o3d.geometry.Image(img_rgb)
+    depth_raw_m =  o3d.geometry.Image(img_dep*_scale) 
+
+    # Create RGBD 
+    rgbd_image_m = o3d.geometry.RGBDImage.create_from_color_and_depth(
+        color_raw_m, 
+        depth_raw_m
+    )
+
+    # Create Point Cloud
+    pcd = o3d.geometry.PointCloud.create_from_rgbd_image( rgbd_image_m, intrinsics )
+    
+#     pcd.transform([[1, 0, 0, 0], [0, -1, 0, 0], [0, 0, -1, 0], [0, 0, 0, 1]])
+    pcd_points = np.asarray(pcd.points)
+    pcd_points[:,1] *= -1
+    inv_pc = o3d.geometry.PointCloud()
+    inv_pc.points = o3d.utility.Vector3dVector(pcd_points)
+    
+    # Estimate Normals
+    inv_pc.estimate_normals( search_param=o3d.geometry.KDTreeSearchParamHybrid(radius=.1, max_nn=30))
+    inv_pc.orient_normals_towards_camera_location()
+
+    # Create Numpy Arrays for the points and corresponding normals.
+    pcd_p = np.asarray(inv_pc.points)
+    pcd_n = np.asarray(inv_pc.normals)
+    
+    return inv_pc, pcd_p, pcd_n
+
+
 def filter_blobs_by_mask(blobs, mask):
     # Extract x, y coordinates and sizes from blobs
     x, y, sizes = blobs[:, 0].astype(int), blobs[:, 1].astype(int), blobs[:, 2]
@@ -312,57 +373,26 @@ def filter_blobs_by_mask(blobs, mask):
     
     return filtered_blobs
 
-def ComputeFeatures(image_dep_m, occ_R, mask):
+def angle_difference_on_planes(vector):
+    # Ensure the input vector is a NumPy array
+    vector = np.array(vector)
+
+    # Normalize the input vector
+    vector /= np.linalg.norm(vector)
+
+    # Calculate the angle difference on the YZ plane
+    angle_xy = np.arctan2(vector[0], vector[1])
     
-    min_sigma = int(occ_R*.05)
-    max_sigma = int(occ_R*.15)
-    # Compute the Edge map
-    edge_map = adjust_log(sobel(image_dep_m, mask=None,  axis=[0,1]))
+    # Calculate the angle difference on the XZ plane
+    angle_xz = np.arctan2(vector[0], vector[2])
 
-    # Compute blobs from the Depth Map
-    depth_map_blobs = blob_dog(image_dep_m, min_sigma=min_sigma, max_sigma=max_sigma, threshold=.1)
+    # Calculate the angle difference on the YZ plane
+    angle_yz = np.arctan2(vector[1], vector[2])
 
-    # Compute blobs from the Edge Map
-    edge_map_blobs = blob_dog(edge_map, min_sigma=min_sigma, max_sigma=max_sigma, threshold=.001)
+    # Convert angles from radians to degrees
+    angle_xy_deg = np.degrees(angle_xy)
+    angle_xz_deg = np.degrees(angle_xz)
+    angle_yz_deg = np.degrees(angle_yz)
+    
 
-
-    fig, axs = plt.subplots(1, 3, figsize=(9.6,3), layout="constrained")
-
-
-    all_blobs = np.concatenate( (depth_map_blobs, edge_map_blobs) )
-
-    shrunk_mask = shrink_mask(mask, int(min_sigma*2))
-
-    filtered_blobs = filter_blobs_by_mask(all_blobs, shrunk_mask)
-
-    selected_bandwidth = max_sigma * 4/3
-
-    # Applying Mean Shift Clustering
-    meanshift = MeanShift(bandwidth=selected_bandwidth)
-    meanshift.fit(filtered_blobs[:,:2])
-    labels = meanshift.labels_
-    cluster_centers = meanshift.cluster_centers_
-    n_clusters = len(cluster_centers)
-
-    blobs_dict = dict()
-    for label, blob in zip(labels, filtered_blobs):
-        if label in blobs_dict:
-            blobs_dict[label].append(blob)
-        else:
-            blobs_dict[label] = [blob]
-
-    blobs_radii = {}
-
-    # Loop over Clusters
-    for key, blobs in blobs_dict.items():
-        _blobs = np.asarray(blobs)    
-        if( len(blobs) == 1 ):
-            radius = blob[2]
-        else:
-            x_len = max(_blobs[:,0]) - min(_blobs[:,0])
-            y_len = max(_blobs[:,1]) - min(_blobs[:,1])
-            radius =  np.sqrt( y_len**2 + x_len**2)/2 + np.mean(_blobs[:,2:])
-        blobs_radii[key] = radius 
-        
-    # Form a Blob Structure (x,y radius)
-    return np.column_stack([cluster_centers, np.array( list(blobs_radii.values()), dtype=float )])
+    return [angle_xy_deg, angle_xz_deg, angle_yz_deg]

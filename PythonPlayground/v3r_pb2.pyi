@@ -15,6 +15,12 @@ class ImgByteArr(_message.Message):
     byteArr: bytes
     def __init__(self, byteArr: _Optional[bytes] = ...) -> None: ...
 
+class ReferenceVPCount(_message.Message):
+    __slots__ = ("refvpcount",)
+    REFVPCOUNT_FIELD_NUMBER: _ClassVar[int]
+    refvpcount: int
+    def __init__(self, refvpcount: _Optional[int] = ...) -> None: ...
+
 class Vec3(_message.Message):
     __slots__ = ("x", "y", "z")
     X_FIELD_NUMBER: _ClassVar[int]
@@ -74,12 +80,14 @@ class NBVInput(_message.Message):
     def __init__(self, refPose: _Optional[_Union[CamPose, _Mapping]] = ..., image: _Optional[_Union[ImgByteArr, _Mapping]] = ...) -> None: ...
 
 class CamPose(_message.Message):
-    __slots__ = ("location", "orientation")
+    __slots__ = ("location", "orientation", "eulers")
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     ORIENTATION_FIELD_NUMBER: _ClassVar[int]
+    EULERS_FIELD_NUMBER: _ClassVar[int]
     location: Vec3
     orientation: Quat
-    def __init__(self, location: _Optional[_Union[Vec3, _Mapping]] = ..., orientation: _Optional[_Union[Quat, _Mapping]] = ...) -> None: ...
+    eulers: Vec3
+    def __init__(self, location: _Optional[_Union[Vec3, _Mapping]] = ..., orientation: _Optional[_Union[Quat, _Mapping]] = ..., eulers: _Optional[_Union[Vec3, _Mapping]] = ...) -> None: ...
 
 class CamPoses(_message.Message):
     __slots__ = ("Poses",)

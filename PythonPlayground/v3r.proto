@@ -8,11 +8,14 @@ service V3Rrelay{
     // Find depth values from an image 
     rpc FindDepths(ImgByteArr) returns ( DepthData );
 
-    // Calibrates the Depth Map
-    rpc CalibrateDepth(CalibrationInput) returns ( DepthData );
-
     // Run the NBV algorithm to get new Poses
     rpc DerivePoses(NBVInput) returns ( CamPoses );
+
+    // Compute Regions of Interest and Descriptors
+    rpc CalculateROIs(ImgByteArr) returns ( CamPoses );
+
+    // Provide Navigation Commands based on GanmeView Frames
+    rpc Navigate(stream ImgByteArr) returns ( stream CamPose);
 
 }
 
@@ -20,6 +23,10 @@ message Nil{}
 
 message ImgByteArr {
     bytes byteArr = 1;
+}
+
+message ReferenceVPCount {
+    uint32 refvpcount = 1;
 }
 
 message Vec3 {
@@ -62,6 +69,7 @@ message NBVInput{
 message CamPose{
     Vec3 location = 1;
     Quat orientation = 2;
+    Vec3 eulers = 3;
 }
 
 // A list of Unity Transforms
