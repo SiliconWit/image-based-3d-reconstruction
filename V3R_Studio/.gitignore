@@ -1,0 +1,8 @@
+.vscode
+ImageCaptures
+Library
+Logs
+Temp
+UserSettingsAssembly-CSharp
+.\*.csproj
+.\*.sln

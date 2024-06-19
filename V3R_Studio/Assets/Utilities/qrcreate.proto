@@ -1,0 +1,21 @@
+// Python: python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. --pyi_out=. Assets/Utilities/qrcreate.proto 
+// C#: protoc --csharp_out=Assets/Utilities/ --plugin=protoc-gen-grpc=$HOME/.local/bin/grpc_csharp_plugin --grpc_out=Assets/Utilities/ Assets/Utilities/qrcreate.proto 
+syntax = "proto3";
+
+package QRManager;
+
+service QRManage{
+    rpc GenerateQRCode( QRText ) returns ( ImgByteArr );
+    rpc DecodeQRCode( ImgByteArr ) returns ( QRTexts );
+}
+
+message ImgByteArr {
+    bytes byteArr = 1;
+}
+
+message QRText{
+    string qrtext = 1; 
+}
+message QRTexts{
+    repeated QRText QRTexts = 1;
+}
