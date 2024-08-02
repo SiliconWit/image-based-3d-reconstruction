@@ -12,7 +12,8 @@
 - Resolution is not the end-all be-all, there is a point of diminishing returns.
 - Evaluation by accuracy alone-RMSE and Entropy.
 - Generic Objects other than what is covered in Literature
-- Using Game Engines easily allows obtaining certain geometries of the object and consistently.
+- Value proposition of Game Engines towards such experiments easily allows obtaining certain geometries of the object and consistently.
+- Case for overlap is image matching.
 ## Literature Review Counters and Contributions
 ### Optimal Lateral Displacement
 - **Camera Pitch** &rarr; poses at different heights faced at the center of the object. *Our pitch varies across different heights*
