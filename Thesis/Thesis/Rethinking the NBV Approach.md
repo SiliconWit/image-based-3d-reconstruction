@@ -1,0 +1,8 @@
+- Next-Best-View (NBV) planning is a strategy used to determine the optimal viewpoint for capturing the next image in the sequence to improve the reconstruction process.
+- Conventional methods of NBV rely on a Volumetric Approach
+- Volumetric approaches start with 3D data obtained through active sensors typically point clouds
+- The constraints of our work is to use a single RGB camera only.
+- Our data structure start as 2D with 3 channels and then 2D only.
+- The goals is to get viewpoints that will maximize information gain?
+- Information in this case are complex geometrical features and occlusions that might be missed with generic Viewpoint Network Design.
+- 

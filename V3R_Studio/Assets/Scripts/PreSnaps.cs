@@ -4,7 +4,6 @@ using NaughtyAttributes;
 using System.Data.Common;
 using System.Threading;
 using System.Diagnostics;
-using PimDeWitte.UnityMainThreadDispatcher;
 using Unity.VisualScripting;
 using UnityEditor;
 using JetBrains.Annotations;
@@ -46,7 +45,7 @@ namespace ThaIntersect.V3RLite{
        
         void Start()
         {
-            pitch = transform.parent;
+            pitch = (transform.parent == null) ? transform : transform.parent ;
             yaw = pitch.parent;
             cameraUnit = GetComponent<CameraUnit>();            
             origin_pos = transform.position;
@@ -65,11 +64,11 @@ namespace ThaIntersect.V3RLite{
             //     }
             // }
 
-            // if( Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V) ){                
-            //     cameraUnit.SingleSnap($"{filename}_{counter.ToString()}",saveDir);
-            //     counter++;
+            if( Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V) ){                
+                cameraUnit.SingleSnap($"{filename}_{counter.ToString()}",saveDir);
+                counter++;
 
-            // }
+            }
 
       
             
@@ -152,17 +151,7 @@ namespace ThaIntersect.V3RLite{
                     UnityEngine.Debug.Log($"Error running meshroom_batch: {error}");
                     System.Console.WriteLine($"Error running meshroom_batch: {error}");
                 }
-                // Once the work is done, update Unity objects from the main thread
-                UnityMainThreadDispatcher.Instance().Enqueue(() =>
-                {
-                    UnityEngine.Debug.Log("Worker thread completed.");
-                    counter++;
-                    isThreadRunning = false;
-                    UnityEngine.Debug.Log("END!");
-                    #if UNITY_EDITOR
-                    EditorApplication.ExitPlaymode();
-                    #endif
-                });
+                
                 return process.ExitCode;
             }
         }

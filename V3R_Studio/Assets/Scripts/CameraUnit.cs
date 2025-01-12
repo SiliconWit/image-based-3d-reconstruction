@@ -19,6 +19,7 @@ namespace ThaIntersect.V3RLite
         [SerializeField] string StereoSavePath =  "ImageCaptures/Stereo";
         [SerializeField] string SavePath =  "ImageCaptures/";
         [SerializeField] string basePath = "ImageCaptures/";
+        [SerializeField] bool depthCam = true;
         string saveDir;
         private string BASE_DIR;
 
@@ -39,6 +40,9 @@ namespace ThaIntersect.V3RLite
             if( _camera == null )
                 _camera = GetComponent<Camera>();
             
+            if( depthCam ) _camera.depthTextureMode = DepthTextureMode.Depth;
+
+
             SetupMetadata();            
         }
 

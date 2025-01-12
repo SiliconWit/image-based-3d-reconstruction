@@ -7,9 +7,9 @@
   "citeFormats": [
     {
       "name": "Cite",
-      "format": "template",
+      "format": "biblatex",
       "cslStyle": "ieee-with-url",
-      "template": "{{citekey}}"
+      "command": "autocite"
     }
   ],
   "exportFormats": [

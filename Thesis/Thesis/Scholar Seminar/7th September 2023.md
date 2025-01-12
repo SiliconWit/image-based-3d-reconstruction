@@ -8,6 +8,7 @@ Mercy
 3:44 PM
 What are the possible practical applications of your research?
 	- They range from preservation archaeological artefacts to all kinds of metrological practices. In Manufacturing, this can include measurement of deformation after impact testing and quality inspection of machined parts.
+	- Precise Manufacturing high-mix-low-volume objects.[source](Volumetric Next Best View by 3D Occupancy Mapping Using Markov Chain Gibbs Sampler for Precise Manufacturing)
 
 Aggrey Omondi
 3:46 PM

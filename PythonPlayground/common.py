@@ -6,8 +6,8 @@ from zoedepth.models.builder import build_model
 from zoedepth.utils.config import get_config
 import matplotlib.pyplot as plt
 import numpy as np
-from midas.model_loader import load_model
-from qreader import QReader
+# from midas.model_loader import load_model
+# from qreader import QReader
 import gc         # garbage collect library
 import logging
 
@@ -254,8 +254,8 @@ def linear_regression_coefficients(D, P):
 
 def compute_depth_midas(img, cam_pose):
     depth_map  = compute_depth_relative(img).astype(np.float32)
-    qreader = QReader()
-    res = qreader.detect_and_decode(image=img,return_detections = True )
+    # qreader = QReader()
+    # res = qreader.detect_and_decode(image=img,return_detections = True )
     detections = [index for index, element in enumerate(res[0]) if element != None]
 
     points = list()
