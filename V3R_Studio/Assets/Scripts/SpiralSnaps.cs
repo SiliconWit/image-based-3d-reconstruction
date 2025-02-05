@@ -97,7 +97,6 @@ namespace ThaIntersect.V3RLite
                 centroid.y + pitch_ypos,
                 centroid.z                
             );
-
             
         }
         

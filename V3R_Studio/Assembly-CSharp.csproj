@@ -68,20 +68,21 @@
     <Compile Include="Assets\DepthCaptureBRP.cs" />
     <Compile Include="Assets\Scripts\DistanceDisplay.cs" />
     <Compile Include="Assets\Scripts\SimpleCircuit.cs" />
-    <Compile Include="Assets\ImageSaver.cs" />
+    <Compile Include="Assets\Scripts\DepthAnalysisDialog.cs" />
+    <Compile Include="Assets\Scripts\DepthAnalysisSnaps.cs" />
     <Compile Include="Assets\Scripts\ColorEncoding.cs" />
     <Compile Include="Assets\Scripts\StereoCam.cs" />
+    <Compile Include="Assets\GenerateHeptahedronPoses.cs" />
     <Compile Include="Assets\Scripts\SpiralSnaps.cs" />
     <Compile Include="Assets\EnableDepthTexture.cs" />
     <Compile Include="Assets\DepthCaptureHDRP.cs" />
     <Compile Include="Assets\Scripts\CircularSnaps.cs" />
-    <Compile Include="Assets\ImageSynthesis.cs" />
     <Compile Include="Assets\Scripts\PreSnaps.cs" />
     <Compile Include="Assets\Scripts\SingleSnap.cs" />
     <Compile Include="Assets\Scripts\CameraPoseControl.cs" />
     <Compile Include="Assets\DepthTextureRenderer.cs" />
+    <Compile Include="Assets\Scripts\DepthAnalysisSnapsEditor.cs" />
     <Compile Include="Assets\CircularPlacementTool.cs" />
-    <Compile Include="Assets\DepthAnalysisSnaps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.6.0.0\useSharedDesignerContext.txt" />

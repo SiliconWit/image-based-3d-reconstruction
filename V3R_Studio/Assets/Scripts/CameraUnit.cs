@@ -141,15 +141,16 @@ namespace ThaIntersect.V3RLite
             AppendMetadata(savedir);
         }
 
-        public void SingleSnap(string label, string parDir=""){
-            saveDir = basePath+parDir;
-            
+        public string SingleSnap(string label, string parDir=""){
+            saveDir = basePath+parDir;            
 
             byte[] _sappedimage = TakeSnap();
             
             CreateMetadataFile(saveDir);
             SaveImage( _sappedimage, saveDir, $"{label}" );
             AppendMetadata(parDir);
+            
+            return saveDir+"\\"+label;
         }
 
         public IEnumerator StereoSnap(float baseline){
@@ -182,6 +183,8 @@ namespace ThaIntersect.V3RLite
             
         }
 
+        public void SaveImage(byte[] _image, string _filename) =>  File.WriteAllBytes($"{_filename}", _image);
+            
         void AppendMetadata(string savedir){
             
 

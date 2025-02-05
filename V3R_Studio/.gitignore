@@ -1,8 +1,9 @@
 .vscode
 ImageCaptures
 Library
+./Assets/Models/*
 Logs
-Temp
+1Temp
 UserSettingsAssembly-CSharp
 .\*.csproj
 .\*.sln
