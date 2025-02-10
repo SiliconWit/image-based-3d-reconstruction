@@ -2,4 +2,3 @@
 - The instantiation of candidates
 - Computation of information gain
 - Evaluation of candidate poses
-- 

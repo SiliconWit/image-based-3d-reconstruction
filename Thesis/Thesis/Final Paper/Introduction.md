@@ -1,0 +1,26 @@
+- Shape Matters:
+	- Sharp edges are difficult to capture[doi:10.1016/j.imavis.2004.06.001]
+	- Curved surfaces can induce distortion
+	- Small features are hard to register with low resolutions centres unless the sensor to object distances are adapted to that-i.e, the sensor be moved closer to the feature.
+	- Parts occluded due to self-occlusion can be missed leading to incomplete reconstructions. This warrants a multi-view approach.
+	- The shape influences the methodology for capturing data.
+	- Complex shapes, concave regions and self-occlusions require a multi-view approach to achieve a complete and accurate reconstruction.
+	- Depth sensors with limited spatial resolution may fail to capture the finer details of such features.
+	- Complex geometries are challenging to feature matching algorithms
+		> "...Reliable feature matching plays an important role in the fields of computer vision and photogrammetry. Due to the complex transformation model caused by photometric and geometric deformations, and the limited discriminative power of local feature descriptors, initial matches with high outlier ratios cannot be addressed very well. This study proposes a reliable outlier-removal algorithm by combining two affine-invariant geometric constraints...."[10.3390/rs14133175]
+	- According (Kochi et. al)[\autocite{kochiRobustSurfaceMatching2014}] complex geometries are difficult to feature match.
+	
+- Reasons for Next Best View algorithm
+	- NBV is an open problem.
+	- Our interest is in improving accuracies of photogrammetric reconstructions by considering the more intricate geometrical features of objects that may get insufficient coverage during the capture process
+	- There is some specialized knowledge required to capture data for 3D reconstructions?
+	- The quality of a reconstruction can be evaluated based on completeness or accuracy.
+	- Next Best View options have to consider photogrammetric constraints. We are more interested in **feature matching** and **scene coverage**. Other constraints include: computational complexity during bundle adjustment. Under bundle adjustment we have baseline-to-depth ratios, the smaller of this ratios can lead to triangulation uncertainties; this is taken care of when coming up with the new poses.
+	- Predefined sequence of views may fail to achieve full coverage due to variation of surface geometry. Empirical observation of the viewpoints is subjective and may require special expertise.
+- Problems with other Next Best View Methods
+	- Lack of full coverage and thus incompleteness since out of all proposed candidates only a handful are sampled and raycasts performed on them[\autocite{borderNextBestView2019}]
+- Our Method
+	- <Provide statement of contribution> "This paper presents...."
+	- There are search-based and synthesis based methods for NBV. Synthesis based are more towards analysing the current information on the surface.
+	- Ours is an adaptive approach based on first pass reference images
+	- Why are people not leveraging 2D information for NBV yet it has proven to be mature enough.
