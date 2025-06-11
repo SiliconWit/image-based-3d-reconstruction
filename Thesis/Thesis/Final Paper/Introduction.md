@@ -1,7 +1,7 @@
 - Shape Matters:
 	- Sharp edges are difficult to capture[doi:10.1016/j.imavis.2004.06.001]
 	- Curved surfaces can induce distortion
-	- Small features are hard to register with low resolutions centres unless the sensor to object distances are adapted to that-i.e, the sensor be moved closer to the feature.
+	- Small features are hard to register with low resolutions centers unless the sensor to object distances are adapted to that-i.e, the sensor be moved closer to the feature.
 	- Parts occluded due to self-occlusion can be missed leading to incomplete reconstructions. This warrants a multi-view approach.
 	- The shape influences the methodology for capturing data.
 	- Complex shapes, concave regions and self-occlusions require a multi-view approach to achieve a complete and accurate reconstruction.
@@ -24,3 +24,20 @@
 	- There are search-based and synthesis based methods for NBV. Synthesis based are more towards analysing the current information on the surface.
 	- Ours is an adaptive approach based on first pass reference images
 	- Why are people not leveraging 2D information for NBV yet it has proven to be mature enough.
+
+## Introduction
+- Structure from motion is a 3D reconstruction technique that creates sparse representations of an object from 2D taken across multiple viewpoints.
+- It makes use of feature extraction and matching algorithms, which are foundational to the Multiview approach of SfM where distinct key points that are invariant to scale and rotation are identified then correspondences of the  same key point are established across multiple images.
+- The matched features are crucial for estimating camera poses which make SfM a prerequisite for other reconstruction techniques.
+- SfM notably struggles in reconstructing scenes and objects characterized by smooth and texture less surfaces, which have sparse or non-existent features on the surface.
+- Conversely, complex surface topologies may have sufficient features for extraction for each viewpoint but provide challenges when it comes to feature matching which can be  attributed to self-occluding features [cite](https://doi.org/10.1109/icarcv.2010.5707416), or ambiguities arising from depth uncertainty.
+- Complete and accurate reconstruction requires multiple viewpoints of the object  to obtain comprehensive surface topology of the object. However, the use of excessive viewpoints, besides being a computation burden during reconstruction, result in smaller baselines that  impede on depth estimation accuracies during triangulation 
+- This calls for a selective approach to viewpoint selection that minimizes the number of viewpoints while maximizing the collected information- a complete and accurate reconstruction. 
+- To achieve this, a conscious perception of the object's surface details and knowledge of photogrammetric constraints is needed.
+- A human-directed approach towards meeting this objective(of minimizing viewpoints and maximizing information) is subjective and dependent on their experience and consistency, both of which may fall short\autocite{zaslavskiyMethodAutomatedData2022}.[source]([https://doi.org/10.3390/app14010297](https://doi.org/10.3390/app14010297)).
+- A more consistent approach is one where the selection of viewpoints are automated-Next Best View which is an open problem. 
+- In NBV, the selection of viewpoints is adaptive to the geometrical characteristics of the object being scanned. 
+- Data is captured from an initial reference viewpoint to obtain partial representation of the object.
+- From this reference representation, novel views are proposed, evaluated and selected on the basis of a utility function with the process iterating until a termination condition is met.
+- This work presents a heuristics-inspired Next Best View approach for synthesizing viewpoints that focus on regions of the object with complex surface topologies of a model-free object.
+- We use a 2-Dimensioal representation of the object's morphology from which we identify "Geometries of Interest"(GoI). We then apply heuristics to calculate primary and secondary poses to meet matching constraints of overlap.

@@ -42,18 +42,77 @@
           {
             "id": "5fea2d89a856db7b",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Background/Epipolar Geometry.md",
+                "file": "Final Paper/Methods.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Methods"
+            }
+          },
+          {
+            "id": "d6e6198f6150440e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Paper/Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Epipolar Geometry"
+              "title": "Introduction"
+            }
+          },
+          {
+            "id": "884571a658e770c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Paper/Literature.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Literature"
+            }
+          },
+          {
+            "id": "761e53bc2c83d500",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Paper/Methods.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Methods"
+            }
+          },
+          {
+            "id": "db8cb73615989a90",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Paper/Methods.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Methods"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -72,7 +131,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -208,36 +268,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "478939bab8b8b20e",
+  "active": "761e53bc2c83d500",
   "lastOpenFiles": [
-    "Final Paper/Literature.md",
-    "Background/Epipolar Geometry.md",
-    "Methodology/attachments/Pasted image 20250105132718.png",
-    "Final Paper/Background.md",
-    "Final Paper/Effects of Texture on Depth Estimation.md",
+    "Final Paper/Methods.md",
+    "Final Paper/Overview.md",
+    "Final Paper/Introduction.md",
     "Final Paper/Focus Points.md",
+    "Final Paper/Experimental Setup.md",
+    "Final Paper/Experiment Setup.md",
+    "Final Paper/Effects of Texture on Depth Estimation.md",
+    "Concepts/Blob Detections.md",
+    "Methodology/attachments/Pasted image 20250303215438.png",
+    "Pre-paper 1/Methods.md",
+    "Pre-paper 1/Literature Review.md",
+    "Pre-paper 1/Core Ideas (Updated).md",
+    "Pre-paper 1/Core Ideas.md",
+    "Pre-paper 1/Convergent Capture 2024-07-25.pdf",
+    "Pre-paper 1/Capture Methodology.pdf",
     "Final Paper/Abstracts.md",
+    "Final Paper/Background.md",
+    "Final Paper/Literature.md",
+    "Background/Photogrammetry Concepts.md",
+    "Background/Glossary.md",
+    "Background/Applications of Photogrammetry.md",
+    "Background/Epipolar Geometry.md",
+    "Background/Background Overview.md",
+    "Methodology/attachments/Pasted image 20250105132718.png",
     "Concepts/Sobel vs Canny.md",
     "Scholar Seminar/7th September 2023.md",
     "Methodology/Camera Lenses vs Sensor Size.md",
-    "Background/Background Overview.md",
     "Final Paper",
     "Paper1/Abstract.md",
     "Pasted image 20230725004429.png",
     "Methodology/Setting up Camera Distortion.md",
-    "Methodology/Blob Detection.md",
-    "Methodology/3D Models for Reconstruction.md",
-    "Methodology/Camera Calibration.md",
-    "Methodology/Getting Secondary Pose and Calculating Orientation.md",
-    "Methodology/Improving Edge Detection.md",
-    "Methodology/Model Free vs Model Based.md",
-    "Methodology/Objective Function.md",
-    "Methodology/Harmonizing Detected Blobs.md",
-    "Methodology/Factors for Preliminary Capture Experiments.md",
-    "Methodology/Enhancing Depth Maps from Sobel.md",
-    "Methodology/Missed Out Literature on Photogrammetry Parameters.md",
-    "Methodology/Open3D.md",
-    "Methodology/Outlier Removal.md",
     "Pasted image 20230724230729.png",
     "Pasted image 20230726231607.png",
     "Questions.canvas",
@@ -250,7 +313,6 @@
     "Methodology/attachments/Screenshot from 2023-12-04 12-07-13 1.png",
     "Methodology/attachments/Screenshot from 2023-12-04 12-07-13.png",
     "Methodology/attachments/Pasted image 20231204120203.png",
-    "Methodology/attachments/Pasted image 20231204115220.png",
     "Methodology/attachments",
     "Untitled 3.canvas",
     "Paper2",
@@ -259,8 +321,6 @@
     "Concepts/attachments",
     "Deep Learning",
     "Literature Review",
-    "Concepts",
-    "Experiments/Experiment2-1.png.crdownload",
     "Methodology/Untitled.canvas"
   ]
 }
