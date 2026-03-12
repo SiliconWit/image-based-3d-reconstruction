@@ -1,3 +1,0 @@
-- **Significance of images** ⇾ The reconstruction is a function of the image quality [[wangCloserangeIndustrialPhotogrammetry2020]]
-- **Recommended Camera Selection** ⇾ digital cameras with large image sensors, moderate pixel size, low imaging noise, high signal-to noise ratio, small distortion value, and good structural stability should be selected as much as possible.
-- 

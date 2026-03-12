@@ -1,4 +1,0 @@
-- The representation of the object
-- The instantiation of candidates
-- Computation of information gain
-- Evaluation of candidate poses

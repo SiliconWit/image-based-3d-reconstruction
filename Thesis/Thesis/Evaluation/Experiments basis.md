@@ -1,2 +1,0 @@
-- In the Scan-RL paper, they compared the path generated from Scan-RL with the circular path. [[naazareOnlineNextBestViewPlanner2022]]
-- 
