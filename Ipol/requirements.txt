@@ -1,0 +1,11 @@
+numpy==1.26.0 
+matplotlib 
+opencv-python 
+scikit-image 
+scikit-learn 
+scipy rembg[cpu] 
+open3d 
+pyvista 
+jupyter 
+pyvista[jupyter] 
+onnxruntime

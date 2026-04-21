@@ -13,7 +13,7 @@ This project tests the hypothesis that range images are sufficient for proposing
 ## Requirements
 
 ```bash
-pip install numpy matplotlib opencv-python scikit-image scikit-learn scipy rembg open3d pyvista jupyter
+pip install numpy matplotlib opencv-python scikit-image scikit-learn scipy rembg[cpu] open3d pyvista jupyter pyvista[jupyter] onnxruntime
 ```
 
 **Note**: Ensure OpenEXR support for OpenCV:
