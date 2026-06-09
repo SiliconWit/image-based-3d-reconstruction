@@ -1,0 +1,5 @@
+trame
+"pyvista[jupyter]"
+opencv-python
+scikit-image
+rembg[gpu]
