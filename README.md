@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/652507379.svg)](https://doi.org/10.5281/zenodo.20616795)
+
 # Depth-Guided Next Best View Planning for Efficient Close-Range Photogrammetry
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -111,7 +113,19 @@ For detailed instructions on replicating the full experimental pipeline, see [`S
 If you use this code in your research, please cite:
 
 ```bibtex
-[Citation information will be added upon publication]
+@software{andrew_kibor_2026_20616796,
+  author       = {Andrew Kibor and
+                  Dr. Sam Macharia},
+  title        = {SiliconWit/image-based-3d-reconstruction: Initial
+                   Release
+                  },
+  month        = jun,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.20616796},
+  url          = {https://doi.org/10.5281/zenodo.20616796},
+}
 ```
 
 ## License

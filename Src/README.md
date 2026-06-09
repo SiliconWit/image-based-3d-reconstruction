@@ -72,12 +72,18 @@ These look-at vectors can be directly imported into the Unity application provid
 If you use this code in your research, please cite:
 
 ```bibtex
-@misc{chesang2026nbv,
-  author = {Andrew Chesang},
-  title = {Depth-Guided Next-Best-View Planner},
-  year = {2026},
-  publisher = {GitHub},
-  url = {https://github.com/yourusername/Depth-Guided-NBV-Planner}
+@software{andrew_kibor_2026_20616796,
+  author       = {Andrew Kibor and
+                  Dr. Sam Macharia},
+  title        = {SiliconWit/image-based-3d-reconstruction: Initial
+                   Release
+                  },
+  month        = jun,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.20616796},
+  url          = {https://doi.org/10.5281/zenodo.20616796},
 }
 ```
 
