@@ -36,7 +36,7 @@ Results show that the **Augmented approach** offers the best balance, combining 
 
 ```
 .
-├── Ipol/                                    # Implementation directory
+├── Src/                                    # Implementation directory
 │   ├── Depth-Guided-NBV-Planner.ipynb      # Main Jupyter notebook
 │   ├── utils.py                             # Helper functions
 │   ├── data/                                # Test data directory
@@ -71,9 +71,9 @@ export OPENCV_IO_ENABLE_OPENEXR=1
 
 ### Quick Start
 
-1. Navigate to the `Ipol` directory:
+1. Navigate to the `Src` directory:
    ```bash
-   cd Ipol
+   cd Src
    ```
 
 2. Launch the Jupyter notebook:
@@ -83,7 +83,7 @@ export OPENCV_IO_ENABLE_OPENEXR=1
 
 3. Follow the notebook workflow to process test images or your own data
 
-For detailed instructions on replicating the full experimental pipeline, see [`Ipol/README.md`](Ipol/README.md).
+For detailed instructions on replicating the full experimental pipeline, see [`Src/README.md`](Src/README.md).
 
 ## Applications
 
