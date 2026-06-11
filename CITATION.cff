@@ -1,0 +1,17 @@
+abstract: <p>Initial Release of the Methodology</p>
+authors:
+- affiliation: Dedan Kimathi Universty of Technology Siemens Mechatronic Certification
+    Center
+  family-names: Andrew Kibor Chesang
+- affiliation: Dedan Kimathi University of Technology
+  family-names: Dr. Sam Macharia
+cff-version: 1.2.0
+date-released: '2026-06-09'
+doi: 10.5281/zenodo.20616796
+license:
+- cc-by-4.0
+message: If you use this software, please cite it using the metadata from this file.
+repository-code: https://github.com/SiliconWit/image-based-3d-reconstruction/tree/1.0.0
+title: 'SiliconWit/image-based-3d-reconstruction: Initial Release'
+type: software
+version: 1.0.0
